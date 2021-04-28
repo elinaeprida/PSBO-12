@@ -33,10 +33,10 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 ## Kebutuhan Sistem
 
-# Functional requirement
+### Functional requirement
 In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-# User Interface Requirement
+### User Interface Requirement
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
@@ -45,6 +45,6 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Diagram
-# Use Case
-# Activity Diagram
-# Class Diagram
+### Use Case
+### Activity Diagram
+### Class Diagram
