@@ -5,8 +5,8 @@
 | -------------         | -----------| -------------    |
 | Fachirah Hestiana R   | G64180021  | Product Manager  |
 | Elina Eprida          | G64180038  | UI/UX Designer   |
-| Content Cell          | G64180071  | Front End        |
-| Content Cell          | G64189001  | Back End         |
+| Ihsan Fadhila         | G64180071  | Front End        |
+| Emilia Syafitri       | G64189001  | Back End         |
 
 ## KOM-HUB
 
