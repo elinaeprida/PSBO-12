@@ -19,26 +19,25 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
       <div class="container">
-        <a class="navbar-brand" href="#"> <img src="asset/icon.png" alt="" width="30" class="rounded mx-2" /> KOM-Hub</a>
+        <a class="navbar-brand" href="/"> <img src="asset/icon.png" alt="" width="30" class="rounded mx-2" /> KOM-Hub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item mx-4">
-              <a class="nav-link " aria-current="page" href="#">Home</a>
+              <a class="nav-link " aria-current="page" href="/home">Home</a>
             </li>
             <li class="nav-item mx-4">
-              <a class="nav-link active" href="#">Alumni</a>
+              <a class="nav-link active" href="/alumni">Alumni</a>
             </li>
             <li class="nav-item mx-4">   
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="/about">About Us</a>
             </li>
             <li>
                 <div class="container mt-1">
-                <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />Dian Adriana</a>
+                <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
             </li>
-
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
