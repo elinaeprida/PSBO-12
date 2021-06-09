@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alumni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class AlumniController extends Controller
 {
@@ -23,7 +27,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        return view('alumni.alumni');
+        //
     }
 
     /**
@@ -55,7 +59,7 @@ class AlumniController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('alumni.alumniprofile');
     }
 
     /**
@@ -66,7 +70,7 @@ class AlumniController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('alumni.alumniedit');
     }
 
     /**
@@ -76,7 +80,7 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Alumni $alumni)
     {
         //
     }

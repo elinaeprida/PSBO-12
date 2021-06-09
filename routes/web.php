@@ -21,6 +21,9 @@ Route::get('/aboutus', function () {
 });
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/alumni', [App\Http\Controllers\AlumniController::class, 'index'])->name('alumni');
-Route::get('/about', [App\Http\Controllers\HomeController::class, 'contact'])->name('about');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('checkRole:admin,mahasiswa,alumni');
+Route::get('/alumni', [App\Http\Controllers\HomeController::class, 'alumni'])->name('alumni')->middleware('checkRole:admin,mahasiswa,alumni');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'contact'])->name('about')->middleware('checkRole:admin,mahasiswa,alumni');
+
+Route::get('/alumni/{alumni}', [App\Http\Controllers\AlumniController::class, 'show'])->name('profile')->middleware('checkRole:admin,alumni');
+Route::get('/alumni/{alumni}/edit', [App\Http\Controllers\AlumniController::class, 'edit'])->middleware('checkRole:admin,alumni');

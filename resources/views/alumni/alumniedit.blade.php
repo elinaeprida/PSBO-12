@@ -82,9 +82,8 @@
             <div class="row justify-content-center mb-3">
               <div class="col-md-5">
                 <div class="input-group">
-                  <span class="input-group-text">Nama Awal dan Akhir</span>
-                  <input type="text" aria-label="First name" class="form-control">
-                  <input type="text" aria-label="Last name" class="form-control">
+                  <span class="input-group-text">Nama Lengkap</span>
+                  <input type="text" name="nama" aria-label="First name" class="form-control" value="">
                 </div>
               </div>
             </div>
@@ -93,7 +92,7 @@
               <div class="col-md-5">
                 <div class="mb-3">
                   <label for="Angkatan" class="form-label">Angkatan</label>
-                  <input type="text" class="form-control" id="Angkatan" placeholder="KOM - ...">
+                  <input type="text" name="angkatan" class="form-control" id="Angkatan" placeholder="KOM - ...">
                 </div>
               </div>
             </div>
@@ -118,7 +117,7 @@
               <div class="col-md-5">
                 <div class="mb-3">
                   <label for="Jabatan" class="form-label">Jabatan</label>
-                  <input type="text" class="form-control" id="Jabatan" placeholder="jabatan">
+                  <input type="text" name="jabatan" class="form-control" id="Jabatan" placeholder="jabatan">
                 </div>
               </div>
             </div>
@@ -127,7 +126,7 @@
               <div class="col-md-5">
                 <div class="mb-3">
                   <label for="Perusahaan" class="form-label">Perusahaan Tempat Bekerja</label>
-                  <input type="text" class="form-control" id="Perusahaan" placeholder="perusahaan">
+                  <input type="text" name="perusahaan" class="form-control" id="Perusahaan" placeholder="perusahaan">
                 </div>
               </div>
             </div>
@@ -136,7 +135,7 @@
               <div class="col-md-5">
                 <div class="mb-3">
                   <label for="D_kerja" class="form-label">Domisili Pekerjaan</label>
-                  <input type="text" class="form-control" id="D_kerja" placeholder="kota bekerja">
+                  <input type="text" name="domisili_pekerjaan" class="form-control" id="D_kerja" placeholder="kota bekerja">
                 </div>
               </div>
             </div>
@@ -145,7 +144,7 @@
               <div class="col-md-5">
                 <div class="mb-3">
                   <label for="D_asal" class="form-label">Domisili Asal</label>
-                  <input type="text" class="form-control" id="D_asal" placeholder="kota asal">
+                  <input type="text" name="domisili_asal" class="form-control" id="D_asal" placeholder="kota asal">
                 </div>
               </div>
             </div>
@@ -155,7 +154,7 @@
                 <label for="basic-url" class="form-label">Instagram</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon3">Link Instagram</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" name="instagram" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                   </div>
               </div>
             </div>
@@ -165,7 +164,7 @@
                 <label for="basic-url" class="form-label">Linkedin</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon3">Link Linkedin</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" name="linkedin" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                   </div>
               </div>
             </div>
@@ -175,7 +174,7 @@
                 <label for="basic-url" class="form-label">Github</label>
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon3">Link Github</span>
-                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                    <input type="text" name="github" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                   </div>
               </div>
             </div>
@@ -184,7 +183,7 @@
               <div class="col-5">
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Upload Photo Profile</label>
-                  <input class="form-control" type="file" id="formFile">
+                  <input class="form-control" name="avatar" type="file" id="formFile">
                 </div>
               </div>
             </div>

@@ -14,7 +14,18 @@ class CreateAlumnisTable extends Migration
     public function up()
     {
         Schema::create('alumnis', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('nama');
+            $table->integer('angkatan');
+            $table->string('spesialisasi');
+            $table->string('jabatan');
+            $table->string('perusahaan');
+            $table->string('domisili_pekerjaan');
+            $table->string('domisili_asal');
+            $table->string('instagram');
+            $table->string('linkedin');
+            $table->string('github');
+            $table->string('avatar');
             $table->timestamps();
         });
     }
