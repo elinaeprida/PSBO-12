@@ -35,6 +35,16 @@
               <a class="nav-link" href="/about">About Us</a>
             </li>
             <li>
+<<<<<<< HEAD:Frontend/alumni.html
+                <div class="container mt-1">
+                <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />Dian Adriana</a> 
+
+                <!-- 
+                  <button type="button" class="btn btn-sm btn-danger" data-toggle="popover" title="Epic Popover" data-content="Some very epic content">Popover Toggle</button>
+                -->
+
+                <button type="button" class="btn btn-outline-secondary btn-sm">Log Out</button>
+=======
               <div class="container mt-1">
                 @if (Auth::user()->role === 'alumni')
                   <a class="navbar-brand" href="/alumni/1"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
@@ -42,6 +52,7 @@
                   <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
                 @endif
               </div>
+>>>>>>> 06b18f5d288d92dbf41547a2664279c6ae7d0c06:resources/views/mahasiswa/alumni.blade.php
             </li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
@@ -92,48 +103,48 @@
             <div class="col-6"> 
 
               <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0" >
-              <div class="card bg-light" style="height: 300px;">
+              <div class="card bg-white" style="height: 300px;">
                 <div class="card-body overflow-auto">
                   
                     <h4 id="list-item-1">Nama</h4>
                       <div class="mb-3">
-                        <label for="Perusahaan" class="form-label">nama lengkap</label>
-                        <input type="text" class="form-control" id="Perusahaan" placeholder="perusahaan">
+                       <!-- <label for="Perusahaan" class="form-label">nama lengkap</label> -->
+                        <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="perusahaan">
                       </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quod, laborum eligendi perferendis unde nostrum assumenda molestiae itaque consequuntur dicta facere est ab temporibus explicabo?</p>
+                    
     
                     <h4 id="list-item-2">Angkatan</h4>
                     <div class="mb-3">
-                      <label for="Perusahaan" class="form-label">angkatan</label>
-                      <input type="text" class="form-control" id="Perusahaan" placeholder="nama">
+                     <!-- <label for="Perusahaan" class="form-label">angkatan</label> -->
+                      <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="nama">
                     </div>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem sint dolor praesentium accusantium culpa minima optio, sapiente et, numquam non quia suscipit. Quis, atque eveniet!</p>
+                    
     
                     <h4 id="list-item-3">Spesialisasi</h4>
                     <div class="mb-3">
-                      <label class="form-label">spesialisasi</label>
-                      <select class="form-select" aria-label="Default select example">
+                     <!-- <label class="form-label">spesialisasi</label> -->
+                      <select class="form-select bg-light" aria-label="Default select example">
                         <option selected disabled>CSN / CIO / SEIS</option>
                         <option value="1">CSN</option>
                         <option value="2">CIO</option>
                         <option value="3">SEIS</option>
                       </select>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores alias quis eaque consectetur incidunt, repellendus quae velit voluptate, itaque in quod dolorum a quo minus.</p>
+                    
     
                     <h4 id="list-item-4">Pekerjaan</h4>
                       <div class="mb-3">
-                        <label for="Perusahaan" class="form-label">pekerjaan</label>
-                        <input type="text" class="form-control" id="Perusahaan" placeholder="pekerjaan">
+                       <!-- <label for="Perusahaan" class="form-label">pekerjaan</label> -->
+                        <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="pekerjaan">
                       </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus eum, dicta dolorem voluptate id rem ad iure ex ipsum quia voluptatibus accusantium error cum repellendus?</p>
+                    
                     
                     <h4 id="list-item-5">Tempat Kerja</h4>
                       <div class="mb-3">
-                        <label for="Perusahaan" class="form-label">tempat kerja</label>
-                        <input type="text" class="form-control" id="Perusahaan" placeholder="kota tempat bekerja">
+                       <!-- <label for="Perusahaan" class="form-label">tempat kerja</label> -->
+                        <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="kota tempat bekerja">
                       </div>
-                    <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+                  
                   </div>
 
                 </div>
@@ -146,10 +157,132 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-6 offset-2">
               <div class="d-grid gap-2 my-4">
-                <button class="btn btn-outline-success" type="button"><a href="alumniprofile.html" class="text-decoration-none"></a>Cari Alumni</button>
+                <button class="btn btn-outline-primary" type="button"><a href="alumniprofile.html" class="text-decoration-none"></a>Cari Alumni</button>
               </div>
             </div>
           </div>
+
+          <!-- Hasil Pencarian -->
+          <div class="col-6 offset-4"> 
+
+            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0" >
+            <div class="card" style="height: 300px; background-color: #fffafc;">
+              <div class="card-body overflow-auto">
+                
+                    <div class="mb-3">
+                      <div class="card mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="asset/4.jpg" alt="..." class="img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Fatimah Azzara</h5>
+                              <p class="card-text">
+                                Software Engineer
+                              </p>
+                              <p class="fst-italic">at Shopee</p>
+                              <p class="card-text"><small class="text-muted">KOM-49</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+  
+                   <div class="mb-3">
+                    <div class="card mb-3">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="asset/2.jpg" alt="..." class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Melati Rafi Solichin</h5>
+                            <p class="card-text">
+                              Data Science
+                            </p>
+                            <p class="fst-italic">at Instagram</p>
+                            <p class="card-text"><small class="text-muted">KOM-55</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+  
+                  
+                  <div class="mb-3">
+                    <div class="card mb-3">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="asset/3.jpg" alt="..." class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <h5 class="card-title">Dwi Fitri Ananda</h5>
+                            <p class="card-text">
+                              UI/UX Designer
+                            </p>
+                            <p class="fst-italic">at MAXIM</p>
+                            <p class="card-text"><small class="text-muted">KOM-51</small></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+  
+                    <div class="mb-3">
+                      <div class="card mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="asset/5.jpg" alt="..." class="img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Amanda Melania</h5>
+                              <p class="card-text">
+                                 Security Engineer
+                              </p>
+                              <p class="fst-italic">at Nord VPN</p>
+                              <p class="card-text"><small class="text-muted">KOM-47</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  
+                  
+                    <div class="mb-3">
+                      <div class="card mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="asset/6.jpg" alt="..." class="img-fluid">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Kinanti Nurrachman</h5>
+                              <p class="card-text">
+                                Frontend Developer
+                              </p>
+                              <p class="fst-italic">at Microsoft</p>
+                              <p class="card-text"><small class="text-muted">KOM-39</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <!-- end Hasil pencarian -->
+
         </div>
 
       </div>
@@ -184,6 +317,14 @@
     <!-- MDB 
     <script type="text/javascript" src="js/js/mdb.min.js"></script>
      MDB -->
+     
+     <script>
+       var popoverTriggerList = [].slice.call(document.querySelectorAll ('[data-toggle="popover"]'));
+       var popoverList = popoverTriggerList.map(function(popoverTrigger)
+       {
+         return new bootstrap.Popover( popoverTrigger);
+       });
+     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script src="js/popper.min.js"></script>

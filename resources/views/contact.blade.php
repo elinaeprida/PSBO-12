@@ -32,7 +32,14 @@
               <a class="nav-link active" href="/aboutus">About Us</a>
             </li>
             <li>
+<<<<<<< HEAD:Frontend/contact.html
+                <div class="container mt-1">
+                <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />Dian Adriana</a>
+
+                <button type="button" class="btn btn-outline-secondary btn-sm">Log Out</button>
+=======
               <button type="button" class="btn btn-outline-primary mx-4"><a href="/login" class="text-decoration-none">Log In</a></button>
+>>>>>>> 06b18f5d288d92dbf41547a2664279c6ae7d0c06:resources/views/contact.blade.php
             </li>
 
             <!-- <li class="nav-item dropdown">

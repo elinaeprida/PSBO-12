@@ -40,6 +40,8 @@
               
               <div class="container mt-1">
                 <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />Dian Adriana</a>
+
+                <button type="button" class="btn btn-outline-secondary btn-sm">Log Out</button>
             </li>
 
             <!-- <li class="nav-item dropdown">
@@ -77,6 +79,9 @@
                     <img src="asset/22.jpg" alt="" class="rounded-circle img-thumbnail mb-5" style="width: 200px;">
                 </div>
             </div>
+
+            <!-- validation -->
+            <!-- end validation -->
 
             <div class="container">
             <div class="row justify-content-center mb-3">

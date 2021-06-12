@@ -84,7 +84,7 @@
     </nav>
     <!-- end navbar -->
 
-    <div class="container-fluid bg-warning" style="height: 600px; background-image: url(asset/01.jpg); background-size: cover; background-position: 20%"></div>
+    <div class="container-fluid bg-warning" style="height: 600px; background-image: url(asset/02.jpg); background-size: cover; background-position: 20%"></div>
 
     <!-- info grafis -->
     <section id="info">
