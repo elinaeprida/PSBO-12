@@ -19,7 +19,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
       <div class="container">
-        <a class="navbar-brand" href="/"> <img src="asset/icon.png" alt="" width="30" class="rounded mx-2" /> KOM-Hub</a>
+        <a class="navbar-brand" href="#"> <img src="asset/icon.png" alt="" width="30" class="rounded mx-2" /> KOM-Hub</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,25 +35,23 @@
               <a class="nav-link" href="/about">About Us</a>
             </li>
             <li>
-<<<<<<< HEAD:Frontend/alumni.html
                 <div class="container mt-1">
-                <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />Dian Adriana</a> 
-
-                <!-- 
-                  <button type="button" class="btn btn-sm btn-danger" data-toggle="popover" title="Epic Popover" data-content="Some very epic content">Popover Toggle</button>
-                -->
-
-                <button type="button" class="btn btn-outline-secondary btn-sm">Log Out</button>
-=======
-              <div class="container mt-1">
                 @if (Auth::user()->role === 'alumni')
-                  <a class="navbar-brand" href="/alumni/1"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
-                @else 
-                  <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
-                @endif
+                <a class="navbar-brand" href="/profile"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+              @else 
+                <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+              @endif
+                <button type="button" class="btn btn-outline-secondary btn-sm">
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                    Log Out
+                  </a>
+                </button>
+                <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
               </div>
->>>>>>> 06b18f5d288d92dbf41547a2664279c6ae7d0c06:resources/views/mahasiswa/alumni.blade.php
             </li>
+
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">

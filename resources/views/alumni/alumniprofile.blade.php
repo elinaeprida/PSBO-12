@@ -35,10 +35,21 @@
               <a class="nav-link" href="/about">About Us</a>
             </li>
             <li>
-                <div class="container mt-1">
-                <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" /><span class="text-sm">Dian Adriana</span></a>
-
-                <button type="button" class="btn btn-outline-secondary btn-sm">Log Out</button>
+              <div class="container mt-1">
+                @if (Auth::user()->role === 'alumni')
+                <a class="navbar-brand" href="/profile"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+              @else 
+                <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+              @endif
+                <button type="button" class="btn btn-outline-secondary btn-sm">
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                    Log Out
+                  </a>
+                </button>
+                <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+              </div>
             </li>
 
             <!-- <li class="nav-item dropdown">
@@ -85,14 +96,13 @@
               <div class="col-md-5 mb-3">
                 <div class="card">
                   <div class="card-body">
-
                     <table style="width: 100%;">
                       <tr style="height: 2.5rem;">
                         <td>
                           Nama         :
                         </td>
                         <td style="text-align:right ;">
-                          Dian Adriana
+                          {{ Auth::user()->name }}
                         </td>
                       </tr>
                       <tr style="height: 2.5rem;">
@@ -100,7 +110,7 @@
                           Angkatan     :
                         </td>
                         <td style="text-align: right;">
-                          50
+                          {{ Auth::user()->alumni->angkatan }}
                         </td>
                       </tr>
                       <tr style="height: 2.5rem;">
@@ -108,24 +118,16 @@
                           Spesialisasi  :
                         </td>
                         <td style="text-align: right;">
-                          CSN
+                          {{ Auth::user()->alumni->spesialisasi }}
                         </td>
                       </tr>
                     </table>
-
-                    <!--
-                      <p class="text-end">Nama: Dian Adriana</p>
-                      <p>Angkatan: 50</p>
-                      <p>Spesialisasi: CSN</p>
-                    -->
-
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Dua -->   
-            
             <div class="row d-flex justify-content-center">
               <div class="col-md-5 mb-3">
                 <div class="card">
@@ -137,7 +139,7 @@
                           Jabatan         :
                         </td>
                         <td style="text-align:right ;">
-                          Senior Robot Engineer
+                          {{ Auth::user()->alumni->jabatan }}
                         </td>
                       </tr>
                       <tr style="height: 2.5rem;">
@@ -145,7 +147,7 @@
                           Perusahaan     :
                         </td>
                         <td style="text-align: right;">
-                          NASA
+                          {{ Auth::user()->alumni->perusahaan }}
                         </td>
                       </tr>
                       <tr style="height: 2.5rem;">
@@ -153,7 +155,7 @@
                           Domisili Pekerjaan  :
                         </td>
                         <td style="text-align: right;">
-                          Los Angles
+                          {{ Auth::user()->alumni->domisili_pekerjaan }}
                         </td>
                       </tr>
                       <tr style="height: 2.5rem;">
@@ -161,7 +163,7 @@
                           Domisili Asal  :
                         </td>
                         <td style="text-align: right;">
-                          Bogor
+                          {{ Auth::user()->alumni->domisili_asal }}
                         </td>
                       </tr>
                     </table>
@@ -184,7 +186,7 @@
                           Instagram         :
                         </td>
                         <td style="text-align:right ;">
-                          DianAdriana666
+                          {{ Auth::user()->alumni->instagram }}
                         </td>
                       </tr>
                       <tr style="height: 2.5rem;">
@@ -192,7 +194,7 @@
                           Linkedin     :
                         </td>
                         <td style="text-align: right;">
-                          Dian Adriana
+                          {{ Auth::user()->alumni->linkedin }}
                         </td>
                       </tr>
                       <tr style="height: 2.5rem;">
@@ -200,7 +202,7 @@
                           Github  :
                         </td>
                         <td style="text-align: right;">
-                          csn_dianadriana
+                          {{ Auth::user()->alumni->github }}
                         </td>
                       </tr>
                     </table>
@@ -223,7 +225,7 @@
             <div class="row d-flex justify-content-center d-grid gap-2">
                 <div class="col-5">
                     <div class="d-grid gap-2 py-2 mb-4">
-                        <button class="btn btn-outline-danger" type="button"><a href="/alumni/{alumni}/edit" class="text-decoration-none">Edit Profile</a></button>
+                        <button class="btn btn-outline-danger" type="button"><a href="/edit" class="text-decoration-none">Edit Profile</a></button>
                       </div>
                 </div>
             </div>

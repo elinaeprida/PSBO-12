@@ -32,15 +32,23 @@
               <a class="nav-link" href="/alumni">Alumni</a>
             </li>
             <li class="nav-item mx-4">   
-              <a class="nav-link active" href="/login">About Us</a>
+              <a class="nav-link active" href="/about">About Us</a>
             </li>
             <li>
               <div class="container mt-1">
                 @if (Auth::user()->role === 'alumni')
-                  <a class="navbar-brand" href="/alumni/1"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
-                @else 
-                  <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
-                @endif
+                <a class="navbar-brand" href="/profile"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+              @else 
+                <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+              @endif
+                <button type="button" class="btn btn-outline-secondary btn-sm">
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                    Log Out
+                  </a>
+                </button>
+                <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
               </div>
             </li>
 

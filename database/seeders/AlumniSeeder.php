@@ -22,7 +22,6 @@ class AlumniSeeder extends Seeder
     	for($i = 1; $i <= 10; $i++){
 
             DB::table('alumnis')->insert([
-                'nama' => $faker->name,
                 'angkatan' => $faker->randomDigitNotNull,
                 'spesialisasi' => $faker->currencyCode,
                 'jabatan' => $faker->jobTitle,

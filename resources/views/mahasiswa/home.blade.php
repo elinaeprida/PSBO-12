@@ -60,21 +60,21 @@
                 <a class="nav-link" href="/about">About Us</a>
               </li>
               <li>
-                  <div class="container mt-1">
-                    @if (Auth::user()->role === 'alumni')
-                      <a class="navbar-brand" href="/alumni/1"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
-                    @else 
-                      <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
-                    @endif
-                  </div>
-              </li>
-              <li>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                  Logout
-                </a>    
-                <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
+                <div class="container mt-1">
+                  @if (Auth::user()->role === 'alumni')
+                  <a class="navbar-brand" href="/profile"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                @else 
+                  <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+                @endif
+                  <button type="button" class="btn btn-outline-secondary btn-sm">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                      Log Out
+                    </a>
+                  </button>
+                  <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+                </div>
             </li>
 
             <!-- <li class="nav-item dropdown">
@@ -174,13 +174,15 @@
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
+                  @foreach ( $sliders as $index => $slider )
                   <div class="carousel-item active">
                     <img src="asset/profile1.jpg" class="d-block w-100" alt="..." />
                     <div class="carousel-caption d-none d-md-block">
-                      <h5>Dea Sampurno</h5>
-                      <p>Software Engineer at Ditmawa | KOM 50</p>
+                      <h5>{{ $slider->user->name }}</h5>
+                        <p>{{ $slider->alumni->jabatan}} at {{ $slider->alumni->perusahaan }} | KOM {{ $slider->alumni->angkatan }}</p>
                     </div>
                   </div>
+                  @endforeach
                   <div class="carousel-item">
                     <img src="asset/profile2.jpg" class="d-block w-100" alt="..." />
                     <div class="carousel-caption d-none d-md-block">

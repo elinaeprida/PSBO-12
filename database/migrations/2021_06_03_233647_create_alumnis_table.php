@@ -15,7 +15,7 @@ class CreateAlumnisTable extends Migration
     {
         Schema::create('alumnis', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
+            $table->unsignedBigInteger('user_id');
             $table->integer('angkatan');
             $table->string('spesialisasi');
             $table->string('jabatan');

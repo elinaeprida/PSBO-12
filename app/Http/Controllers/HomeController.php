@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Slider;
+use App\Models\Alumni;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Builder;
 
 class HomeController extends Controller
 {
@@ -23,7 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('mahasiswa.home');
+        $sliders = Slider::orderBy('id', 'desc')->take(3)->get();
+        $users = User::all();
+        $alumnis = Alumni::all();
+        return view('mahasiswa.home', compact('sliders', 'alumnis', 'users'));
     }
     
     public function contact()
@@ -33,6 +41,7 @@ class HomeController extends Controller
 
     public function alumni()
     {
+        $alumnis = Alumni::all();
         return view('mahasiswa.alumni');
     }
 }

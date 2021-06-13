@@ -57,9 +57,10 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, Alumni $alumni)
     {
-        return view('alumni.alumniprofile');
+
+        return view('alumni.alumniprofile', compact('alumni'));
     }
 
     /**
@@ -68,9 +69,9 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Alumni $alumni)
     {
-        return view('alumni.alumniedit');
+        return view('alumni.alumniedit', compact('alumni'));
     }
 
     /**
@@ -82,7 +83,41 @@ class AlumniController extends Controller
      */
     public function update(Request $request, Alumni $alumni)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'angkatan' => 'required',
+            'spesialisasi' => 'required',
+            'jabatan' => 'required',
+            'perusahaan' => 'required',
+            'domisili_pekerjaan' => 'required',
+            'domisili_asal' => 'required',
+            'instagram' => 'required',
+            'linkedin' => 'required',
+            'github' => 'required',
+        ]);
+
+        $alumni->update([
+            'nama' => $request->nama,
+            'angkatan' => $request->angkatan,
+            'spesialisasi' => $request->spesialisasi,
+            'jabatan' => $request->jabatan,
+            'perusahaan' => $request->perusahaan,
+            'domisili_pekerjaan' => $request->domisili_pekerjaan,
+            'domisili_asal' => $request->domisili_asal,
+            'instagram' => $request->instagram,
+            'linkedin' => $request->linkedin,
+            'github' => $request->github,
+        ]);
+    
+       if($request->hasFile('avatar')) {
+            $storedImg = $alumni->avatar;
+            $alumni->update(['article_img' => $request->file('avatar')->store('alumni/avatar', 'public')]);
+            if(Storage::exists('public/' . $alumni->avatar)) {
+                Storage::delete('public/' . $storedImg);
+            }
+        }
+
+        return redirect()->route('profile');
     }
 
     /**
