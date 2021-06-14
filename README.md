@@ -5,8 +5,6 @@
 
 KOM - Hub hadir sebagai sumber informasi tentang data-data alumni yang berisikan informasi karir, kontak yang bisa dihubungi, dan link GitHub yang bisa diakses. Dengan KOM-HUB diharapkan mahasiswa dapat terhubung dengan alumni dan mempermudah akses data alumni sesuai dengan kebutuhan.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
 ## Deskripsi Sistem
 
 KOM-hub merupakan sebuah platform berbasis website yang berisi database alumni Ilkom IPB. Saat pertama kali dibuka, Website KOM-hub menampilkan video loop berisi pesan selamat datang dan penjelasan apa itu KOM-hub. Lalu, terdapat chart mengenai informasi lulusan Ilkom IPB, sebaran spesialisasi alumni Ilkom IPB, dan peta sebaran tempat kerja alumni Ilkom IPB serta beberapa alumni sukses.
@@ -26,7 +24,9 @@ Oleh karena itu sebagai mahasiswa Ilmu Komputer IPB ingin mengikuti prestasi kak
 
 ## Spesifikasi teknis lingkungan pengembangan
 ### Software
+Perangkat lunak yang diperlukan yaitu Laravel untuk .......
 ### Hardware
+ Perangkat keras yang digunakan yaitu laptop. Spesifikasi perangkat keras yang digunakan adalah ......... 
 ### Tech Stack
 
 ## Konsep OOP yang digunakan
@@ -35,17 +35,35 @@ Oleh karena itu sebagai mahasiswa Ilmu Komputer IPB ingin mengikuti prestasi kak
 
 ## Hasil dan pembahasan
 ### Use case diagram
+![Image of usecase diagram]()
 ### Activity diagram
+![Image of activity diagram]()
 ### Class diagram
+![Image of class diagram]()
 ### Entity Relationship Diagram
+![Image of erd diagram]()
 ### Arsitektur sistem
 ### Fungsi utama yang dikembangkan
+Fungsi utama yang dikembangkan adalah fungsi .....
+```
+```
 ### Fungsi CRUD
+```
+```
 ## Hasil implementasi
 ### Screenshot sistem
+![Image of home]()
+![Image of login]()
+![Image of search alumni]()
+![Image of detail alumni]()
+![Image of profile]()
+![Image of edit profile]()
+![Image of edit password]()
+![Image of about us]()
 ### Link aplikasi (jika sudah di deploy)
 
 ## Saran untuk pengembangan selanjutnya
+Saran untuk pengembangan selanjutnya diharapkan berkoordinasi terlebih dahulu antara front-end dan back-end mengenai platform yang akan digunakan agar lebih mudah untuk mensinkronisasi kode front-end dan back-end.
 
 ## Developer dan job desc
 
