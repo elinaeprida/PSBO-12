@@ -1,5 +1,5 @@
+<p align="center"><b> Kom-Hub by Kelompok 12 P1 </b></p>
 <p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/1T4xSGp/icon-komhub.png" alt="icon-komhub" border="0" width="150"></a></p>
-<p align="center"> Kom-Hub by Kelompok 12 P1 </p>
 
 ## KOM-HUB
 
