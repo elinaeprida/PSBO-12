@@ -2,29 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/aboutus', function () {
-    return view('contact');
-});
-Route::get('/profile', function () {
-    return view('admin.profile');
-});
-Route::get('/dashboard', function () {
-    return view('admin.index');
-});
+//
+Route::get('/', [App\Http\Controllers\PageController::class, 'index']);
+Route::get('/aboutus', [App\Http\Controllers\PageController::class, 'about']);
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('checkRole:admin,mahasiswa,alumni');
@@ -38,3 +18,10 @@ Route::get('alumni/{alumni}/edit', [App\Http\Controllers\AlumniController::class
 Route::post('/alumni/{alumni}', [App\Http\Controllers\AlumniController::class, 'update'])->name('alumniupdate');
 
 // Route::get('/alumnipage', [App\Http\Controllers\HomeController::class, 'search']);
+
+
+Route::get('/admin/about', [App\Http\Controllers\Admin\AboutController::class, 'index'])->middleware('checkRole:admin');
+
+// Route::get('/dashboard', function () {
+//     return view('admin.index');
+// });

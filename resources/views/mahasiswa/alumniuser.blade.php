@@ -37,7 +37,7 @@
             <li>
                 <div class="container mt-1">
                 @if (Auth::user()->role === 'alumni')
-                <a class="navbar-brand" href="/profile"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
               @else 
                 <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
               @endif
@@ -196,17 +196,11 @@
 
               </div>
             </div>
-
           </div>
           <!-- end Hasil pencarian -->
-
         </div>
-
       </div>
-
-
     </div>
-  
     <!-- end pendcarian-->
 
     <!-- Footer -->
@@ -221,7 +215,6 @@
             </ul>
           </div>
         </div>
-
         <hr />
         <p class="text-center pt-3">Copyright Alumni Ilkom Hub. Computer Science. IPB University</p>
       </div>
@@ -230,10 +223,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.js"></script>
-
-    <!-- MDB 
-    <script type="text/javascript" src="js/js/mdb.min.js"></script>
-     MDB -->
      
      <script>
        var popoverTriggerList = [].slice.call(document.querySelectorAll ('[data-toggle="popover"]'));

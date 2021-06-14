@@ -9,10 +9,6 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 
-    <!-- MDB 
-    <link rel="stylesheet" href="css/css/mdb.min.css" />
-     MDB -->
-
     <title>Contact</title>
   </head>
   <body style="height: 800px;">
@@ -29,38 +25,15 @@
               <a class="nav-link" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item mx-4">
+              <a class="nav-link" href="/login">Alumni</a>
+            </li>
+            <li class="nav-item mx-4">
               <a class="nav-link active" href="/aboutus">About Us</a>
             </li>
             <li>
-<<<<<<< HEAD:Frontend/contact.html
-                <div class="container mt-1">
-                <a class="navbar-brand" href="#"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />Dian Adriana</a>
-
-                <button type="button" class="btn btn-outline-secondary btn-sm">Log Out</button>
-=======
               <button type="button" class="btn btn-outline-primary mx-4"><a href="/login" class="text-decoration-none">Log In</a></button>
->>>>>>> 06b18f5d288d92dbf41547a2664279c6ae7d0c06:resources/views/contact.blade.php
             </li>
-
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            -->
           </ul>
-
-          <!-- 
-
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          -->
         </div>
       </div>
     </nav>
@@ -68,9 +41,7 @@
 
     
     <!-- Contact -->
-    
     <div class="container-fluid bg-light" style="height: 800px;">
-    
         <div class="container py-5" style="height: 800px; background-color: #fffafc;">
             <div class="row d-flex justify-content-center align-middle text-center" style="margin-top: 150px;">
                 <div class="col-md-6">
@@ -90,12 +61,6 @@
                               diakses untuk mendapatkan berbagai kontak <br>
                               pribadi para alumni
                             </p>
-                         
-                         <!--
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        --> 
-                             
                         </div>
                       </div>
                 </div>
@@ -144,10 +109,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.js"></script>
-
-    <!-- MDB 
-    <script type="text/javascript" src="js/js/mdb.min.js"></script>
-     MDB -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script src="js/popper.min.js"></script>

@@ -21,13 +21,13 @@
           <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item mx-4">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item mx-4">
-                <a class="nav-link" href="#">Alumni</a>
+                <a class="nav-link" href="/login">Alumni</a>
               </li>
               <li class="nav-item mx-4">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="/aboutus">About Us</a>
               </li>
             </ul>
           </div>

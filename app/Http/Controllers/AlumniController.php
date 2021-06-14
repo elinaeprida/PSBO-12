@@ -145,7 +145,10 @@ class AlumniController extends Controller
             }
         }
 
-        return redirect()->route('profile');
+        return redirect()->route('alumniedit');
+
+            // dd($alumni->id);
+
     }
 
     /**

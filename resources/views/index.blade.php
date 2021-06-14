@@ -9,10 +9,6 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 
-    <!-- MDB 
-    <link rel="stylesheet" href="css/css/mdb.min.css" />
-     MDB -->
-
     <!-- Google chart -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -21,11 +17,11 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ["Task", "Hours per Day"],
-          ["< 50 jt/bln", 2],
-          ["< 30 jt/bln", 3],
-          ["< 20 jt/bln", 6],
-          ["< 10 jt/bln", 9],
-          ["< 5 jt/ bln", 11],
+          ["Software Engineer", 2],
+          ["Data Analyst", 3],
+          ["UI/UX Designer", 6],
+          ["Data Scientist", 9],
+          ["IoT Engineer", 11],
         ]);
 
         var options = {
@@ -54,31 +50,14 @@
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item mx-4">
+              <a class="nav-link" href="/login">Alumni</a>
+            </li>
+            <li class="nav-item mx-4">
               <a class="nav-link" href="/aboutus">About Us</a>
             </li>
             <li>
               <button type="button" class="btn btn-outline-primary mx-4"><a href="/login" class="text-decoration-none">Log In</a></button>
             </li>
-
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            -->
-          </ul>
-
-          <!-- 
-
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          -->
         </div>
       </div>
     </nav>
@@ -152,17 +131,23 @@
             <div class="col-6">
               <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  {{-- <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button> --}}
+                  @foreach ($sliders as $index => $item)
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="{{ $index == 0 ? 'active' : '' }}"></button>
+                  @endforeach
                 </div>
                 <div class="carousel-inner">
+                  @foreach ( $sliders as $index => $slider )
                   <div class="carousel-item active">
                     <img src="asset/profile1.jpg" class="d-block w-100" alt="..." />
                     <div class="carousel-caption d-none d-md-block">
-                      <h5>Dea Sampurno</h5>
-                      <p>Software Engineer at Ditmawa | KOM 50</p>
+                      <h5>{{ $slider->user->name }}</h5>
+                        <p>{{ $slider->alumni->jabatan}} at {{ $slider->alumni->perusahaan }} | KOM {{ $slider->alumni->angkatan }}</p>
                     </div>
+                  </div>
+                  @endforeach
                   </div>
                   <div class="carousel-item">
                     <img src="asset/profile2.jpg" class="d-block w-100" alt="..." />

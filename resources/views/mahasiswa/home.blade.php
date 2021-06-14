@@ -9,10 +9,6 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 
-    <!-- MDB 
-    <link rel="stylesheet" href="css/css/mdb.min.css" />
-     MDB -->
-
     <!-- Google chart -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -76,32 +72,13 @@
                   </form>
                 </div>
             </li>
-
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            -->
           </ul>
-
-          <!-- 
-
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          -->
         </div>
       </div>
     </nav>
     <!-- end navbar -->
 
-    <div class="container-fluid bg-warning" style="height: 600px; background-image: url(asset/01.jpg); background-size: cover; background-position: 20%"></div>
+    <div class="container-fluid bg-warning" style="height: 600px; background-image: url(asset/02.jpg); background-size: cover; background-position: 20%"></div>
 
     <!-- info grafis -->
     <section id="info">
@@ -112,7 +89,6 @@
               <h2>Info Grafis Alumni Ilmu Komputer IPB</h2>
             </div>
           </div>
-
           <div class="row justify-content-center mt-3">
             <div class="col-md-4">
               <div class="card">
@@ -129,7 +105,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-4">
               <div class="card">
                 <div class="card-body text-center">
@@ -144,8 +119,6 @@
 
                   <h1 class="card-text text-primary">95%</h1>
                   <p class="card-text mb-5">Mahasiswa lulus tepat waktu (72 bulan)</p>
-                  <!-- <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a> -->
                 </div>
               </div>
             </div>
@@ -164,7 +137,6 @@
               <h1>Profil Alumni Sukses</h1>
             </div>
           </div>
-
           <div class="row justify-content-center">
             <div class="col-6">
               <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -200,14 +172,6 @@
     </section>
     <!-- end profil alumni -->
 
-    <!-- gambar 
-    <div class="container-fluid">
-      <div style="height: 200px">
-        <img src="asset/01.jpg" alt="" class="img-fluid" />
-      </div>
-    </div>
-     end gambar -->
-
     <!-- Footer -->
     <footer class="text-white py-4" style="background-color: #5472ea">
       <div class="container">
@@ -229,10 +193,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.js"></script>
-
-    <!-- MDB 
-    <script type="text/javascript" src="js/js/mdb.min.js"></script>
-     MDB -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script src="js/popper.min.js"></script>

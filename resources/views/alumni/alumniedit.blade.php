@@ -25,7 +25,7 @@
               <a class="nav-link " aria-current="page" href="/home">Home</a>
             </li>
             <li class="nav-item mx-4">
-              <a class="nav-link " href="/alumni">Alumni</a>
+              <a class="nav-link " href="/alumnipage">Alumni</a>
             </li>
             <li class="nav-item mx-4">   
               <a class="nav-link" href="/about">About Us</a>
@@ -33,7 +33,7 @@
             <li>
               <div class="container mt-1">
                 @if (Auth::user()->role === 'alumni')
-                <a class="navbar-brand" href="/profile"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
               @else 
                 <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
               @endif
@@ -74,7 +74,7 @@
             </div>
             <!-- validation -->
             <!-- end validation -->
-            <form class="form-horizontal" enctype="multipart/form-data" role="form" action="{{ route('alumniupdate', Auth::user()->alumni->id)}}" method="post">
+            <form class="form-horizontal" enctype="multipart/form-data" role="form" action="{{ route('alumniupdate', ["alumni" => Auth::user()->id])}}" method="post">
             @csrf
               <div class="container">
                 <div class="row justify-content-center mb-3">
