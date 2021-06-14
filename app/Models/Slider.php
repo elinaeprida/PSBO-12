@@ -9,6 +9,11 @@ class Slider extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'alumni_id',
+    ];
+
     public function alumni()
     {
         return $this->belongsTo(Alumni::class, 'alumni_id');
