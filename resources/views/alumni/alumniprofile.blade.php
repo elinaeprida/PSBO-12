@@ -225,7 +225,7 @@
             <div class="row d-flex justify-content-center d-grid gap-2">
                 <div class="col-5">
                     <div class="d-grid gap-2 py-2 mb-4">
-                        <button class="btn btn-outline-danger" type="button"><a href="/edit" class="text-decoration-none">Edit Profile</a></button>
+                        <button class="btn btn-outline-danger" type="button"><a href="{{ url('alumni/'.Auth::user()->alumni->id.'/edit')}}" class="text-decoration-none">Edit Profile</a></button>
                       </div>
                 </div>
             </div>

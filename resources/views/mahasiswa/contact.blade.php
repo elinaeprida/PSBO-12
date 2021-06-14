@@ -29,7 +29,7 @@
               <a class="nav-link " aria-current="page" href="/home">Home</a>
             </li>
             <li class="nav-item mx-4">
-              <a class="nav-link" href="/alumni">Alumni</a>
+              <a class="nav-link" href="/alumnipage">Alumni</a>
             </li>
             <li class="nav-item mx-4">   
               <a class="nav-link active" href="/about">About Us</a>

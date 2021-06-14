@@ -54,7 +54,7 @@
                 <a class="nav-link active" aria-current="page" href="/home">Home</a>
               </li>
               <li class="nav-item mx-4">
-                <a class="nav-link" href="/alumni">Alumni</a>
+                <a class="nav-link" href="/alumnipage">Alumni</a>
               </li>
               <li class="nav-item mx-4">   
                 <a class="nav-link" href="/about">About Us</a>
@@ -62,7 +62,7 @@
               <li>
                 <div class="container mt-1">
                   @if (Auth::user()->role === 'alumni')
-                  <a class="navbar-brand" href="/profile"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                  <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
                 @else 
                   <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
                 @endif
@@ -169,9 +169,9 @@
             <div class="col-6">
               <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  @foreach ($sliders as $index => $item)
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{$index}}" class="{{ $index == 0 ? 'active' : '' }}"></button>
+                  @endforeach
                 </div>
                 <div class="carousel-inner">
                   @foreach ( $sliders as $index => $slider )
@@ -183,20 +183,6 @@
                     </div>
                   </div>
                   @endforeach
-                  <div class="carousel-item">
-                    <img src="asset/profile2.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Imam Mulhaq Rosyadi</h5>
-                      <p>User Interface Designer at GoTo | KOM 55</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="asset/profile3.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Dwi Nanda Tsania</h5>
-                      <p>Product Manager at Lazada | KOM 45</p>
-                    </div>
-                  </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

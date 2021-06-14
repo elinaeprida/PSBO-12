@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumni;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -25,9 +26,15 @@ class AlumniController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Alumni $alumni)
     {
-        //
+        if (Auth::user()->alumni === NULL){
+            return view('alumni.create', compact('alumni'));
+        } else {
+            return view('alumni.alumniprofile', compact('alumni'));
+        }
+        // dd($alumnis=Alumni::all());
+
     }
 
     /**
@@ -35,9 +42,9 @@ class AlumniController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, Alumni $alumni)
     {
-        //
+        return view('alumni.create', compact('alumni'));
     }
 
     /**
@@ -48,7 +55,21 @@ class AlumniController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'angkatan' => 'required',
+            'spesialisasi' => 'required',
+            'jabatan' => 'required',
+            'perusahaan' => 'required',
+            'domisili_pekerjaan' => 'required',
+            'domisili_asal' => 'required',
+            'instagram' => 'required',
+            'linkedin' => 'required',
+            'github' => 'required',
+        ]);
+        $alumni = Alumni::create($request->all());
+
+        $alumni->update(['avatar' => $request->file('avatar')->store('alumni/avatar', 'public')]);
+        return redirect()->route('profile');
     }
 
     /**
@@ -59,8 +80,7 @@ class AlumniController extends Controller
      */
     public function show(Request $request, Alumni $alumni)
     {
-
-        return view('alumni.alumniprofile', compact('alumni'));
+        //
     }
 
     /**
@@ -72,6 +92,8 @@ class AlumniController extends Controller
     public function edit(Alumni $alumni)
     {
         return view('alumni.alumniedit', compact('alumni'));
+        // return redirect()->route('alumniedit', ['id' => $id]);
+        // dd($alumni->id);
     }
 
     /**
@@ -84,7 +106,6 @@ class AlumniController extends Controller
     public function update(Request $request, Alumni $alumni)
     {
         $request->validate([
-            'nama' => 'required',
             'angkatan' => 'required',
             'spesialisasi' => 'required',
             'jabatan' => 'required',
@@ -97,7 +118,6 @@ class AlumniController extends Controller
         ]);
 
         $alumni->update([
-            'nama' => $request->nama,
             'angkatan' => $request->angkatan,
             'spesialisasi' => $request->spesialisasi,
             'jabatan' => $request->jabatan,
@@ -108,7 +128,15 @@ class AlumniController extends Controller
             'linkedin' => $request->linkedin,
             'github' => $request->github,
         ]);
-    
+        
+        
+        if($request->has('user')) {
+            $alumni->user()->detach();
+            foreach($request->user as $key => $value) {
+                $alumni->user()->attach($value);
+            }
+        }
+
        if($request->hasFile('avatar')) {
             $storedImg = $alumni->avatar;
             $alumni->update(['article_img' => $request->file('avatar')->store('alumni/avatar', 'public')]);

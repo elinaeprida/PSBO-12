@@ -9,10 +9,6 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 
-    <!-- MDB 
-    <link rel="stylesheet" href="css/css/mdb.min.css" />
-     MDB -->
-
     <title>Alumni Edit</title>
   </head>
   <body>
@@ -51,17 +47,6 @@
                 </form>
               </div>
             </li>
-
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            -->
           </ul>
 
           <!-- 
@@ -87,18 +72,16 @@
                     <img src="asset/22.jpg" alt="" class="rounded-circle img-thumbnail mb-5" style="width: 200px;">
                 </div>
             </div>
-
             <!-- validation -->
             <!-- end validation -->
-            <form class="form-horizontal" enctype="multipart/form-data" role="form" action="{{url('alumni/'.$alumni->id)}}" method="post">
-            @method('patch')
+            <form class="form-horizontal" enctype="multipart/form-data" role="form" action="{{ route('alumniupdate', Auth::user()->alumni->id)}}" method="post">
             @csrf
               <div class="container">
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-5">
                     <div class="input-group">
                       <span class="input-group-text">Nama Lengkap</span>
-                      <input type="text" name="nama" class="form-control" value="{{ old('name',Auth::user()->name) }}">
+                      <input type="text" name="name" class="form-control" value="{{ old('name',Auth::user()->name) }}">
                     </div>
                   </div>
                 </div>
@@ -111,11 +94,9 @@
                 </div>
               </div>
             </div>
-
             <div class="row justify-content-center mb-3">
               <div class="col-md-5">
                 <div class="mb-3">
-
                   <label class="form-label">Spesialisasi</label>
                   <select class="form-select" name="spesialisasi">
                     <option selected disabled>{{ old('spesialisasi',Auth::user()->alumni->spesialisasi) }}</option>
@@ -123,7 +104,6 @@
                     <option value="2">CIO</option>
                     <option value="3">SEIS</option>
                   </select>
-
                 </div>
               </div>
             </div>
@@ -219,7 +199,6 @@
             </ul>
           </div>
         </div>
-
         <hr />
         <p class="text-center pt-3">Copyright Alumni Ilkom Hub. Computer Science. IPB University</p>
       </div>
@@ -228,10 +207,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.js"></script>
-
-    <!-- MDB 
-    <script type="text/javascript" src="js/js/mdb.min.js"></script>
-     MDB -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script src="js/popper.min.js"></script>

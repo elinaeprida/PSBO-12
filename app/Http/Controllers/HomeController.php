@@ -39,9 +39,52 @@ class HomeController extends Controller
         return view('mahasiswa.contact');
     }
 
-    public function alumni()
+    public function alumni(Request $request, Alumni $alumni, User $user)
     {
-        $alumnis = Alumni::all();
-        return view('mahasiswa.alumni');
+        // if($request->has('cari')){
+        //     $alumnis = Alumni::where('nama', 'LIKE', '%'.$request->cari.'%')->get();
+        // }else(
+        //     $alumnis = Alumni::all()
+        // );
+
+        // $users = User::orderBy('name', 'asc')->get()->all();
+        $alumnis = Alumni::orderBy('angkatan', 'asc')->get()->all();;
+        $users = User::all();
+        // $users = User::select("name")
+        //         ->where("name","LIKE","%{$request->name}%")
+        //         ->get();
+   
+        // return ;
+        // $sorted = $users->sortBy('name');
+        
+        return view('mahasiswa.alumniuser', compact('alumnis', 'users'));
     }
+
+    // public function search(Request $request)
+    // {
+        //get the general information about the alumni
+        // $alumni = Alumni::query()->firstOrFail();
+
+        // $alumni = trim($request->get('name'));
+
+        // $posts = Post::query()
+        //     ->where('title', 'like', "%{$key}%")
+        //     ->orWhere('content', 'like', "%{$key}%")
+        //     ->orderBy('created_at', 'desc')
+        //     ->get();
+
+        //get all the categories
+
+        // //get all the tags
+        // $tags = Tag::all();
+
+        // //get the recent 5 posts
+        // $recent_posts = Post::query()
+        //     ->where('is_published', true)
+        //     ->orderBy('created_at', 'desc')
+        //     ->take(5)
+        //     ->get();
+
+        // return view('mahasiswa.alumniuser');
+    // }
 }
