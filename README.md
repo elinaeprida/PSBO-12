@@ -1,12 +1,5 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
-## MEET OUR TEAM
-| Nama                  | NIM        | Role             |
-| -------------         | -----------| -------------    |
-| Fachirah Hestiana R   | G64180021  | Product Manager  |
-| Elina Eprida          | G64180038  | UI/UX Designer   |
-| Ihsan Fadhila         | G64180071  | Front End        |
-| Emilia Syafitri       | G64189001  | Back End         |
+<p align="center"><b> Kom-Hub by Kelompok 12 P1 </b></p>
+<p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/1T4xSGp/icon-komhub.png" alt="icon-komhub" border="0" width="150"></a></p>
 
 ## KOM-HUB
 
@@ -26,24 +19,39 @@ Ilmu Komputer Institut Pertanian Bogor (IPB) merupakan salah satu jurusan Ilmu K
 
 Oleh karena itu sebagai mahasiswa Ilmu Komputer IPB ingin mengikuti prestasi kakak-kakak alumni, kami ingin mengenal lebih dekat dengan kakak-kakak alumni untuk mendapatkan banyak insight tentang dunia ilmu komputer diluar sana dan tentunya untuk menjalin silaturahmi. dan juga ingin belajar dari beberapa proyek yang sudah diselesaikan kakak-kakak alumni supaya menjadi motivasi agar para mahasiswa Ilmu Komputer IPB bisa juga melakukannya atau bahkan melakukan yang lebih baik.
 
-## Batasan Sistem
+## User analysis
+### User Story
+> "Sebagai mahasiswa Ilmu Komputer IPB, saya ingin mengetahui profil alumni Ilmu Komputer IPB meliputi nama, spesialisasi, penempatan, kontak pribadi, linkedin, dan github sehingga memudahkan saya untuk terhubung dengan alumni.”
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Kebutuhan Sistem
+## Spesifikasi teknis lingkungan pengembangan
+### Software
+### Hardware
+### Tech Stack
 
-### Functional requirement
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Konsep OOP yang digunakan
 
-### User Interface Requirement
+## Tipe desain pengembangan yang digunakan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Hasil dan pembahasan
+### Use case diagram
+### Activity diagram
+### Class diagram
+### Entity Relationship Diagram
+### Arsitektur sistem
+### Fungsi utama yang dikembangkan
+### Fungsi CRUD
+## Hasil implementasi
+### Screenshot sistem
+### Link aplikasi (jika sudah di deploy)
 
-## Project Method
+## Saran untuk pengembangan selanjutnya
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Developer dan job desc
 
-## Diagram
-### Use Case
-### Activity Diagram
-### Class Diagram
+| Nama                  | NIM        | Role             |
+| -------------         | -----------| -------------    |
+| Fachirah Hestiana R   | G64180021  | Product Manager  |
+| Elina Eprida          | G64180038  | UI/UX Designer   |
+| Ihsan Fadhila         | G64180071  | Front End        |
+| Emilia Syafitri       | G64189001  | Back End         |
