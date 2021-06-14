@@ -15,14 +15,17 @@ Untuk mencari alumni pilih menu “Alumni” pada navigasi. Untuk masuk ke halam
 
 ## Spesifikasi teknis lingkungan pengembangan
 ### Software
-Perangkat lunak yang diperlukan yaitu Laravel untuk .......
+Perangkat lunak yang diperlukan yaitu Laravel untuk pengembangan website. Laravel dipilih karena template layoutnya ringan, mempunyai banyak library Object Oriented, pembagian modul secara independen, dan pengecekan menggunakan unit testing.
 ### Hardware
  Perangkat keras yang digunakan yaitu laptop. Spesifikasi perangkat keras yang digunakan adalah ......... 
 ### Tech Stack
 
 ## Konsep OOP yang digunakan
+```
+```
 
 ## Tipe desain pengembangan yang digunakan
+Tipe desain pengembangan yang digunakan yaitu agile development method. Agile merupakan model development jangka pendek yang memerlukan adaptasi cepat dan pengembangan terhadap perubahan dalam bentuk apapun. Kami menggunakan agile karena memungkinkan tim untuk memberikan penilai lebih cepat dan merespon perubahan dengan cepat.
 
 ## Hasil dan pembahasan
 ### Use case diagram
