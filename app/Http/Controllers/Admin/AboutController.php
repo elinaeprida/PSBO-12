@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\About;
 
 class AboutController extends Controller
 {
@@ -13,10 +14,10 @@ class AboutController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
@@ -24,9 +25,10 @@ class AboutController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function index()
+    public function index(About $about)
     {
-        return view('admin.index');
+        $abouts = About::all();
+        return view('admin.about.index', compact('abouts'));
     }
 
     /**
@@ -67,9 +69,9 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(About $about)
     {
-        //
+        return view('admin.about.edit', compact('about'));
     }
 
     /**
@@ -79,9 +81,20 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, About $about)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'sub_title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $about->update([
+            'title' => $request->title,
+            'sub_title' => $request->sub_title,
+            'description' => $request->description,
+        ]);
+        return redirect()->route('admin_about');
     }
 
     /**

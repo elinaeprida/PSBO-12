@@ -9,9 +9,11 @@ class Slider extends Model
 {
     use HasFactory;
 
+    protected $table = 'sliders';
+
     protected $fillable = [
-        'user_id',
         'alumni_id',
+        'user_id',
     ];
 
     public function alumni()

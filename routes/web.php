@@ -24,12 +24,15 @@ Route::post('/alumni/{alumni}', [App\Http\Controllers\AlumniController::class, '
 
 // Page Admin
 // Home
-Route::get('/admin/dashboard', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('dashboard')->middleware('checkRole:admin');
-Route::post('/admin/dashboard/slider/{slider}', [App\Http\Controllers\Admin\HomeController::class, 'store']);
+Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('dashboard')->middleware('checkRole:admin');
+Route::post('/admin/dashboard', [App\Http\Controllers\Admin\HomeController::class, 'store']);
+Route::patch('/admin/dashboard', [App\Http\Controllers\Admin\HomeController::class, 'update']);
 Route::delete('/admin/slider/{slider}', [App\Http\Controllers\Admin\HomeController::class, 'destroy']);
 
-Route::get('/admin/about', [App\Http\Controllers\Admin\AboutController::class, 'index'])->middleware('checkRole:admin');
-
+//About
+Route::get('/admin/about', [App\Http\Controllers\Admin\AboutController::class, 'index'])->name('admin_about')->middleware('checkRole:admin');
+Route::get('/admin/about/{about}/edit', [App\Http\Controllers\Admin\AboutController::class, 'edit']);
+Route::patch('/admin/about/{about}', [App\Http\Controllers\Admin\AboutController::class, 'update']);
 // Route::get('/dashboard', function () {
 //     return view('admin.index');
 // });

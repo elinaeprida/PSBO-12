@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumni;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -56,6 +57,7 @@ class AlumniController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'user_id' => 'required',
             'angkatan' => 'required',
             'spesialisasi' => 'required',
             'jabatan' => 'required',
@@ -67,6 +69,9 @@ class AlumniController extends Controller
             'github' => 'required',
         ]);
         $alumni = Alumni::create($request->all());
+        $user = User::update([
+            'name' => $request->name,
+        ]);
 
         $alumni->update(['avatar' => $request->file('avatar')->store('alumni/avatar', 'public')]);
         return redirect()->route('profile');
@@ -105,6 +110,25 @@ class AlumniController extends Controller
      */
     public function update(Request $request, Alumni $alumni)
     {
+        // $user = User::find('id');
+
+        // $alumnis = $user->alumnis()->get();
+
+        // foreach ($alumnis as $alumni) {
+        //     $data[] = [
+        //         'name' => $alumni->user->name,
+        //         'angkatan' => $alumni->angkatan,
+        //         'spesialisasi' => $alumni->spesialisasi,
+        //         'jabatan' => $alumni->jabatan,
+        //         'perusahaan' => $alumni->perusahaan,
+        //         'domisili_pekerjaan' => $alumni->domisili_pekerjaan,
+        //         'domisili_asal' => $alumni->domisili_asal,
+        //         'instagram' => $alumni->instagram,
+        //         'linkedin' => $alumni->linkedin,
+        //         'github' => $alumni->github,
+        //     ];
+        // }
+
         $request->validate([
             'angkatan' => 'required',
             'spesialisasi' => 'required',
@@ -130,10 +154,10 @@ class AlumniController extends Controller
         ]);
         
         
-        if($request->has('user')) {
-            $alumni->user()->detach();
+        if($request->has('Auth::user()')) {
+            $alumni->Auth::user()->detach();
             foreach($request->user as $key => $value) {
-                $alumni->user()->attach($value);
+                $alumni->Auth::user()->attach($value);
             }
         }
 
@@ -145,9 +169,9 @@ class AlumniController extends Controller
             }
         }
 
-        return redirect()->route('alumniedit');
+        // return redirect()->route('alumniedit');
 
-            // dd($alumni->id);
+            return $alumni;
 
     }
 

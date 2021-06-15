@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Models\Slider;
 use App\Models\Alumni;
 use App\Models\User;
+use App\Models\Grad;
 
 
 class HomeController extends Controller
@@ -23,7 +24,8 @@ class HomeController extends Controller
         $sliders = Slider::orderBy('id', 'desc')->take(3)->get();
         $users = User::all();
         $alumnis = Alumni::all();
-        return view('admin.slider.index', compact('sliders', 'alumnis', 'users'));
+        $grads = Grad::all();
+        return view('admin.slider.index', compact('sliders', 'alumnis', 'users', 'grads'));
     }
 
     /**
@@ -44,14 +46,15 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'alumni_id' => 'required',
             'user_id' => 'required',
         ]);
         
-        $slider = Slider::create($request->all());
+        $slider = Slider::create($validatedData);
 
-        return redirect()->route('dashboard');
+        // return redirect()->route('create_slider');
+        dd ('success!');
     }
 
     /**
@@ -83,9 +86,22 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, Grad $grad) {
+        $request->validate([
+            'tepat_waktu' => 'required',
+            'dapat_kerja' => 'required',
+            'kerja_sesuai' => 'required',
+        ]);
+
+        $grad->update([
+            'tepat_waktu' => $request->tepat_waktu,
+            'dapat_kerja' => $request->dapat_kerja,
+            'kerja_sesuai' => $request->kerja_sesuai,
+        ]);
+
+        $grad->save();
+        // return redirect()->route('dashboard');
+        dd('grad->id');
     }
 
     /**

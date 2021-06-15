@@ -81,7 +81,7 @@
                   <div class="col-md-5">
                     <div class="input-group">
                       <span class="input-group-text">Nama Lengkap</span>
-                      <input type="text" name="name" class="form-control" value="{{ old('name',Auth::user()->name) }}">
+                      <input type="text" name="user[]" class="form-control" value="{{ old('name',Auth::user()->name) }}">
                     </div>
                   </div>
                 </div>

@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="{{ asset('admin-spacex/assets/plugin/fullcalendar/fullcalendar.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('admin-spacex/assets/plugin/fullcalendar/fullcalendar.print.css') }}" media='print'>
 
+	<link href="{{ asset('/summernote/summernote-bs4.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -50,10 +51,10 @@
 			<!-- /.title -->
 			<ul class="menu js__accordion">
 				<li class="current">
-					<a class="waves-effect" href="index.html"><i class="menu-icon ti-dashboard"></i><span>Dashboard</span></a>
+					<a class="waves-effect" href="/admin"><i class="menu-icon ti-dashboard"></i><span>Homepage</span></a>
 				</li>
 				<li>
-					<a class="waves-effect" href="calendar.html"><i class="menu-icon ti-calendar"></i><span>Calendar</span></a>
+					<a class="waves-effect" href="/admin/about"><i class="menu-icon ti-calendar"></i><span>About</span></a>
 				</li>
 				<li>
 					<a class="waves-effect parent-item js__control" href="#"><i class="menu-icon ti-bar-chart"></i><span>Charts</span><span class="menu-arrow fa fa-angle-down"></span></a>
