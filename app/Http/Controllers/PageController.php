@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Models\Slider;
 use App\Models\Alumni;
 use App\Models\User;
+use App\Models\About;
 
 class PageController extends Controller
 {
@@ -21,6 +22,7 @@ class PageController extends Controller
     
     public function about()
     {
-        return view('contact');
+        $about = About::all();
+        return view('contact', compact('abouts'));
     }
 }

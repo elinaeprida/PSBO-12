@@ -66,9 +66,10 @@
             <div class="row d-flex justify-content-center align-middle text-center" style="margin-top: 150px;">
                 <div class="col-md-6">
                     <div class="card py-5 px-5">
+                      @foreach ($abouts as $about)
                         <div class="card-body">
-                          <h1 class="card-title">About Us</h1>                      
-                          <h6 class="card-subtitle mb-2 text-muted">and Our Website</h6>
+                          <h1 class="card-title">{{ $about->title }}</h1>                      
+                          <h6 class="card-subtitle mb-2 text-muted">{{ $about->sub_title }}</h6>
                           <hr>
                           </hr>
                           <p class="card-text ms-1 my-4 me-5 text-start">
@@ -82,6 +83,7 @@
                               pribadi para alumni
                             </p>
                         </div>
+                      @endforeach
                       </div>
                 </div>
             </div>
@@ -94,26 +96,27 @@
     <footer class=" text-white py-4" style="background-color: #5472EA;">
       <div class="container">
         <div class="row">
+          @foreach ($contacts as $contact)
           <div class="col-md-3">
             <ul class="list-unstyled text-start">
               <li> <h4>Location</h4></li>
-              <li><i class=" "></i> IPB Darmaga Campus, Dramaga, Bogor</li>
-              <li><i class=" "></i> 16680, West Java, INDONESIA</li>
+              <li><i class=" "></i>{{$contact->location}}</li>
             </ul>
           </div>
           <div class="col-md-3 offset-2">
             <ul class="list-unstyled text-start">
               <li><h4>Contact Us</h4></li>
-              <li><i class=" "></i> Phone : xxxxxxxxxxx</li>
-              <li><i class=" "></i> Email   : xxxxxx@apps.ipb.ac.id</li>
+              <li><i class=" "></i> Phone : {{$contact->phone}}</li>
+              <li><i class=" "></i> Email   : {{$contact->email}}</li>
             </ul>
           </div>
           <div class="col-md-1 offset-3">
             <ul class="list-unstyled text-start">
               <li><h4>More at</h4></li>
-              <li><i class=" "></i> sc.ipb.ac.id</li>
+              <li><i class=" "></i><a id="url">{{$contact->link_more}}</a></li>
             </ul>
           </div>
+          @endforeach
         </div>
         <hr />
         <p class="text-center pt-3">Copyright Alumni Ilkom Hub. Computer Science. IPB University</p>

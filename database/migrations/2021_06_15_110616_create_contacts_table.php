@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGradsTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateGradsTable extends Migration
      */
     public function up()
     {
-        Schema::create('grads', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->biginteger('tepat_waktu');
-            $table->biginteger('dapat_kerja');
-            $table->biginteger('kerja_sesuai');
+            $table->string('location');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('link_more');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateGradsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grads');
+        Schema::dropIfExists('contacts');
     }
 }

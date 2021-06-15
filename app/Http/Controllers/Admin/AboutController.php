@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\About;
+use App\Models\Contact;
 
 class AboutController extends Controller
 {
@@ -25,42 +26,11 @@ class AboutController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function index(About $about)
+    public function index(About $about, Contact $contact)
     {
         $abouts = About::all();
-        return view('admin.about.index', compact('abouts'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $contacts = Contact::all();
+        return view('admin.about.index', compact('abouts', 'contacts'));
     }
 
     /**
@@ -96,6 +66,43 @@ class AboutController extends Controller
         ]);
         return redirect()->route('admin_about');
     }
+    
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit_contact(Contact $contact)
+    {
+        return view('admin.about.editcontact', compact('contact'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update_contact(Request $request, Contact $contact)
+    {
+        $request->validate([
+            'location' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'link_more' => 'required',
+        ]);
+
+        $contact->update([
+            'location' => $request->location,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'link_more' => $request->link_more,
+        ]);
+        return redirect()->route('admin_about');
+    }
+
 
     /**
      * Remove the specified resource from storage.

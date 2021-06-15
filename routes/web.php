@@ -11,7 +11,7 @@ Auth::routes();
 // Page All Auth
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('checkRole:admin,mahasiswa,alumni');
 Route::get('/alumnipage', [App\Http\Controllers\HomeController::class, 'alumni'])->name('alumni')->middleware('checkRole:admin,mahasiswa,alumni');
-Route::get('/about', [App\Http\Controllers\HomeController::class, 'contact'])->name('about')->middleware('checkRole:admin,mahasiswa,alumni');
+Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about')->middleware('checkRole:admin,mahasiswa,alumni');
 
 // Page Alumni
 Route::get('/alumni', [App\Http\Controllers\AlumniController::class, 'index'])->name('profile')->middleware('checkRole:admin,alumni');
@@ -33,6 +33,9 @@ Route::delete('/admin/slider/{slider}', [App\Http\Controllers\Admin\HomeControll
 Route::get('/admin/about', [App\Http\Controllers\Admin\AboutController::class, 'index'])->name('admin_about')->middleware('checkRole:admin');
 Route::get('/admin/about/{about}/edit', [App\Http\Controllers\Admin\AboutController::class, 'edit']);
 Route::patch('/admin/about/{about}', [App\Http\Controllers\Admin\AboutController::class, 'update']);
+
+Route::get('/admin/contact/{contact}/edit', [App\Http\Controllers\Admin\AboutController::class, 'edit_contact']);
+Route::patch('/admin/contact/{contact}', [App\Http\Controllers\Admin\AboutController::class, 'update_contact']);
 // Route::get('/dashboard', function () {
 //     return view('admin.index');
 // });

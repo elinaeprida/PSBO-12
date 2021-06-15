@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGradsTable extends Migration
+class CreateMahasiswasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateGradsTable extends Migration
      */
     public function up()
     {
-        Schema::create('grads', function (Blueprint $table) {
+        Schema::create('mahasiswas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->biginteger('tepat_waktu');
-            $table->biginteger('dapat_kerja');
-            $table->biginteger('kerja_sesuai');
+            $table->unsignedBigInteger('user_id');
+            $table->string('NIM');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateGradsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grads');
+        Schema::dropIfExists('mahasiswas');
     }
 }

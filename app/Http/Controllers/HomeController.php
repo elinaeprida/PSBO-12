@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 use App\Models\Alumni;
 use App\Models\User;
+use App\Models\About;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Builder;
@@ -34,9 +36,11 @@ class HomeController extends Controller
         return view('mahasiswa.home', compact('sliders', 'alumnis', 'users'));
     }
     
-    public function contact()
+    public function about(About $about, Contact $contact)
     {
-        return view('mahasiswa.contact');
+        $contacts = Contact::all();
+        $abouts = About::all();
+        return view('mahasiswa.contact', compact('abouts', 'contacts'));
     }
 
     public function alumni(Request $request, Alumni $alumni, User $user)
