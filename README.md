@@ -73,7 +73,7 @@ Untuk mencari alumni pilih menu “Alumni” pada navigasi. Untuk masuk ke halam
 # Hasil implementasi
 ### Screenshot sistem
 ![Image of home](https://i.ibb.co/QFFTz5z/home1.jpg)
-![Image of login](https://ibb.co/W06gKSr)
+![Image of login](https://i.ibb.co/HCVngmc/login.jpg)
 ![Image of search alumni](https://i.ibb.co/xjffQ1K/alumni1.jpg)
 ![Image of detail alumni](https://i.ibb.co/8zVjJJm/profile.jpg)
 ![Image of profile](https://i.ibb.co/8zVjJJm/profile.jpg)
