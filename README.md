@@ -39,7 +39,7 @@ Contoh Penerapan: Dari class User kita dapat membuat object alumni, mahasiswa, d
 
 ### Method
 Method merupakan suatu operasi berupa fungsi-fungsi yang dapat dikerjakan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. 
-Contoh : pada object mangga : terdapat method ambilRasa , kupasKulit dan lain-lain.
+
 Contoh Penerapan: 
 Pada object mahasiswa, terdapat method readProfileAlumni. 
 ![Image of method]()
