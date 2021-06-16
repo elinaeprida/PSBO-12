@@ -32,13 +32,21 @@ Untuk mencari alumni pilih menu “Alumni” pada navigasi. Untuk masuk ke halam
 
 # Hasil dan pembahasan
 ### Use case diagram
-![Image of usecase diagram]()
+![Image of usecase diagram](https://i.ibb.co/znvD7Qq/usecase.jpg)
 ### Activity diagram
-![Image of activity diagram]()
+- Activity : Registrasi Akun User
+
+![Image of activity diagram](https://i.ibb.co/zJrvtPm/act-regis.jpg)
+- Activity : Search Alumni
+
+![Image of activity diagram](https://i.ibb.co/mN4CMjJ/act-search.jpg)
+- Activity : Edit Profile
+
+![Image of activity diagram](https://i.ibb.co/DYWmPGT/act-edit-profile.jpg)
 ### Class diagram
-![Image of class diagram]()
+![Image of class diagram](https://i.ibb.co/gR32Xfp/classdiagram.jpg)
 ### Entity Relationship Diagram
-![Image of erd diagram]()
+![Image of erd](https://i.ibb.co/NTmCHVt/erddiagram.jpg)
 ### Arsitektur sistem
 ![Image of system architecture](https://i.ibb.co/3FxRpjd/arsitektur.jpg)
 ### Fungsi utama yang dikembangkan
