@@ -24,7 +24,47 @@ Untuk mencari alumni pilih menu “Alumni” pada navigasi. Untuk masuk ke halam
 <p> Laravel dipilih karena template layoutnya ringan, mempunyai banyak library Object Oriented, pembagian modul secara independen, dan pengecekan menggunakan unit testing. </p>
 
 ## Konsep OOP yang digunakan
-..........
+### Class
+Class merupakan suatu blueprint atau cetakan untuk menciptakan suatu instant dari object. Class juga merupakan grup suatu object dengan kemiripan attributes/properties, behaviour dan relasi ke object lain.
+
+Contoh Penerapan: Class User, Contact, About, Grads, Slider
+![Image of class]()
+
+
+### Objek
+Object adalah instance dari class. Jika class secara umum merepresentasikan (template) sebuah object, sebuah instance adalah representasi nyata dari class itu sendiri.
+
+Contoh Penerapan: Dari class User kita dapat membuat object alumni, mahasiswa, dan admin.
+![Image of object]()
+
+### Method
+Method merupakan suatu operasi berupa fungsi-fungsi yang dapat dikerjakan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. 
+Contoh : pada object mangga : terdapat method ambilRasa , kupasKulit dan lain-lain.
+Contoh Penerapan: 
+Pada object mahasiswa, terdapat method readProfileAlumni. 
+![Image of method]()
+
+Pada object alumni, terdapat method createProfileAlumni, readProfileAlumni, updateProfileAlumni. 
+
+### Enkapsulasi (Encapsulation)
+
+Dengan enkapsulasi, kita bisa memilih property dan method apa saja yang boleh diakses, dan mana yang tidak boleh diakses. Programmer yang merancang class bisa menyediakan property dan method khusus yang memang ditujukan untuk diakses dari luar.
+
+Contoh Penerapan:
+Pembatasan akses user yang tidak terdaftar terhadap halaman alumni. User tersebut hanya bisa mengakses halaman utama dan halaman About Kom-Hub.
+![Image of encapsulation]()
+
+
+### Inheritance (Pewarisan) 
+Inheritance adalah konsep OOP dimana sebuah class dapat menurunkan property dan method yang dimilikinya kepada class lain. Konsep inheritance dipakai untuk memanfaatkan fitur code reuse, yakni menghindari terjadinya duplikasi kode program.
+
+Contoh Penerapan:
+Eloquent relationship pada class user dengan alumni, user dengan mahasiswa, serta user dengan admin.
+![Image of login]()
+
+
+
+
 
 # Tipe desain pengembangan yang digunakan
 <p align="left"><a href="" target="_blank"><img src="https://i.ibb.co/dDf3c7Q/agile2.jpg" alt="agile" border="0" width="500"></a></p>
