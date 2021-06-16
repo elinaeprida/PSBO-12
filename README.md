@@ -89,7 +89,7 @@ Saran untuk pengembangan selanjutnya diharapkan lebih meningkatkan koordinasi an
 
 | Nama                  | NIM        | Role             |
 | -------------         | -----------| -------------    |
-| Fachirah Hestiana R   | G64180021  | Product Manager  |
+| Fachirah Hestiana R   | G64180021  | UI Designer, Product Manager  |
 | Elina Eprida          | G64180038  | UI/UX Designer   |
 | Ihsan Fadhila         | G64180071  | Front End        |
 | Emilia Syafitri       | G64189001  | Back End         |
