@@ -28,43 +28,190 @@ Untuk mencari alumni pilih menu “Alumni” pada navigasi. Untuk masuk ke halam
 Class merupakan suatu blueprint atau cetakan untuk menciptakan suatu instant dari object. Class juga merupakan grup suatu object dengan kemiripan attributes/properties, behaviour dan relasi ke object lain.
 
 Contoh Penerapan: Class User, Contact, About, Grads, Slider
-![Image of class]()
+```
+class Slider extends Model
+{
+    use HasFactory;
 
+    protected $table = 'sliders';
+
+    protected $fillable = [
+        'alumni_id',
+        'user_id',
+    ];
+
+    public function alumni()
+    {
+        return $this->belongsTo(Alumni::class, 'alumni_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+}
+```
 
 ### Objek
 Object adalah instance dari class. Jika class secara umum merepresentasikan (template) sebuah object, sebuah instance adalah representasi nyata dari class itu sendiri.
 
 Contoh Penerapan: Dari class User kita dapat membuat object alumni, mahasiswa, dan admin.
-![Image of object]()
+```
+// Admin
+class HomeController extends Controller
+{
+    ....
+    
+    public function index(Grad $grad)
+    {
+        $sliders = Slider::orderBy('id', 'desc')->take(3)->get();
+        $users = User::all();
+        $alumnis = Alumni::all();
+        $grads = Grad::all();
+        return view('admin.slider.index', compact('sliders', 'alumnis', 'users', 'grads'));
+    }
+
+    ....
+    
+    public function edit(Grad $grad)
+    {
+        return view('admin.editgrad', compact('grad'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Grad $grad) {
+        $request->validate([
+            'tepat_waktu' => 'required',
+            'dapat_kerja' => 'required',
+            'kerja_sesuai' => 'required',
+        ]);
+
+        $grad->update([
+            'tepat_waktu' => $request->tepat_waktu,
+            'dapat_kerja' => $request->dapat_kerja,
+            'kerja_sesuai' => $request->kerja_sesuai,
+        ]);
+
+        return redirect()->route('dashboard');
+        // dd('$grad->id');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Slider $slider)
+    {
+        Slider::destroy($slider->id);
+        return redirect('/admin/dashboard');
+    }
+}
+```
 
 ### Method
 Method merupakan suatu operasi berupa fungsi-fungsi yang dapat dikerjakan oleh suatu object. Method didefinisikan pada class akan tetapi dipanggil melalui object. 
 
 Contoh Penerapan: 
-Pada object mahasiswa, terdapat method readProfileAlumni. 
-![Image of method]()
+- Pada object alumni, terdapat method createProfileAlumni, readProfileAlumni, updateProfileAlumni. 
+- Pada object mahasiswa, terdapat method readProfileAlumni. 
+```
+public function alumni(Request $request, Alumni $alumni, User $user){
+     $alumnis = Alumni::orderBy('angkatan', 'asc')->get()->all();;
+     $users = User::all();
+        
+     return view('mahasiswa.alumniuser', compact('alumnis', 'users'));
+}
 
-Pada object alumni, terdapat method createProfileAlumni, readProfileAlumni, updateProfileAlumni. 
+public function show (Alumni $alumni){
+     return view('alumni.show', compact('alumni'));
+}
+```
 
 ### Enkapsulasi (Encapsulation)
-
 Dengan enkapsulasi, kita bisa memilih property dan method apa saja yang boleh diakses, dan mana yang tidak boleh diakses. Programmer yang merancang class bisa menyediakan property dan method khusus yang memang ditujukan untuk diakses dari luar.
 
 Contoh Penerapan:
 Pembatasan akses user yang tidak terdaftar terhadap halaman alumni. User tersebut hanya bisa mengakses halaman utama dan halaman About Kom-Hub.
-![Image of encapsulation]()
+```
+// middleware/checkRole
+public function handle(Request $request, Closure $next)
+    {
+        $roles = array_slice(func_get_args(), 2);
 
+        $user = \Auth::user();
+        // dd($user->role, $roles);
+        if($user != null){
+            foreach ($roles as $role) { 
+                $userRole = $user->role;
+                if( $userRole == $role){
+                    return $next($request);
+                }
+            }
+            return redirect('/');
+        } else{
+            return $next($request);
+            
+        }
+    }
+    
+// views
+@if (Auth::user()->role === 'alumni')
+    <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+@else 
+    <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+@endif
+
+// routes
+Route::get('alumni/{alumni}/edit', [App\Http\Controllers\AlumniController::class, 'edit'])->name('alumniedit')->middleware('checkRole:admin,alumni');              
+                
+```
 
 ### Inheritance (Pewarisan) 
 Inheritance adalah konsep OOP dimana sebuah class dapat menurunkan property dan method yang dimilikinya kepada class lain. Konsep inheritance dipakai untuk memanfaatkan fitur code reuse, yakni menghindari terjadinya duplikasi kode program.
 
 Contoh Penerapan:
 Eloquent relationship pada class user dengan alumni, user dengan mahasiswa, serta user dengan admin.
-![Image of login]()
-
-
-
-
+```
+ Schema::create('alumnis', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('angkatan');
+            $table->string('spesialisasi');
+            $table->string('jabatan');
+            $table->string('perusahaan');
+            $table->string('domisili_pekerjaan');
+            $table->string('domisili_asal');
+            $table->string('instagram');
+            $table->string('linkedin');
+            $table->string('github');
+            $table->string('avatar');
+            $table->timestamps();
+        });
+ Schema::create('mahasiswas', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('NIM');
+            $table->timestamps();
+        });
+ Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->enum('role', ['admin', 'alumni', 'mahasiswa'])->default('mahasiswa');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+```
 
 # Tipe desain pengembangan yang digunakan
 <p align="left"><a href="" target="_blank"><img src="https://i.ibb.co/dDf3c7Q/agile2.jpg" alt="agile" border="0" width="500"></a></p>
