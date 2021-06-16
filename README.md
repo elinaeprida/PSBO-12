@@ -72,14 +72,13 @@ Untuk mencari alumni pilih menu “Alumni” pada navigasi. Untuk masuk ke halam
 
 # Hasil implementasi
 ### Screenshot sistem
-![Image of home]()
-![Image of login]()
-![Image of search alumni]()
-![Image of detail alumni]()
-![Image of profile]()
-![Image of edit profile]()
-![Image of edit password]()
-![Image of about us]()
+![Image of home](https://ibb.co/MDDtWXW)
+![Image of login](https://ibb.co/W06gKSr)
+![Image of search alumni](https://ibb.co/gTPPCSb)
+![Image of detail alumni](https://ibb.co/XyTz99W)
+![Image of profile](https://ibb.co/XyTz99W)
+![Image of edit profile](https://ibb.co/NNf8H57)
+![Image of about us](https://ibb.co/2WFKdw1)
 
 # Saran untuk pengembangan selanjutnya
 Saran untuk pengembangan selanjutnya diharapkan lebih meningkatkan koordinasi antar anggota kelompok dan mengupdate timeline secara berkala.
