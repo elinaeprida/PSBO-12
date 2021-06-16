@@ -27,8 +27,9 @@ Untuk mencari alumni pilih menu “Alumni” pada navigasi. Untuk masuk ke halam
 ..........
 
 # Tipe desain pengembangan yang digunakan
-![tipe pengembangan](https://i.ibb.co/fdvPgcS/agile.png)
-<p> Tipe desain pengembangan yang digunakan yaitu agile development method. Agile merupakan model development jangka pendek yang memerlukan adaptasi cepat dan pengembangan terhadap perubahan dalam bentuk apapun. Kami menggunakan agile karena memungkinkan tim untuk memberikan penilai lebih cepat dan merespon perubahan dengan cepat. </p>
+<p align="left"><a href="" target="_blank"><img src="https://i.ibb.co/dDf3c7Q/agile2.jpg" alt="agile" border="0" width="500"></a></p>
+<p> Tipe desain pengembangan yang digunakan yaitu V-Model. Agile merupakan model development jangka pendek yang memerlukan adaptasi cepat dan pengembangan terhadap perubahan dalam bentuk apapun. Kami menggunakan agile karena memungkinkan tim untuk memberikan penilai lebih cepat dan merespon perubahan dengan cepat.
+</p>
 
 # Hasil dan pembahasan
 ### Use case diagram
