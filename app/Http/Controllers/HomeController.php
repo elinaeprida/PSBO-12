@@ -7,6 +7,7 @@ use App\Models\Alumni;
 use App\Models\User;
 use App\Models\About;
 use App\Models\Contact;
+use App\Models\Grad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Builder;
@@ -33,7 +34,8 @@ class HomeController extends Controller
         $sliders = Slider::orderBy('id', 'desc')->take(3)->get();
         $users = User::all();
         $alumnis = Alumni::all();
-        return view('mahasiswa.home', compact('sliders', 'alumnis', 'users'));
+        $grads = Grad::first();
+        return view('mahasiswa.home', compact('sliders', 'alumnis', 'users', 'grads'));
     }
     
     public function about(About $about, Contact $contact)
@@ -62,6 +64,10 @@ class HomeController extends Controller
         // $sorted = $users->sortBy('name');
         
         return view('mahasiswa.alumniuser', compact('alumnis', 'users'));
+    }
+
+    public function show (Alumni $alumni){
+        return view('alumni.show', compact('alumni'));
     }
 
     // public function search(Request $request)

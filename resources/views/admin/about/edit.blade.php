@@ -1,5 +1,19 @@
 @extends('admin.layouts.admin')
 
+@section('nav')
+<ul class="menu js__accordion">
+	<li>
+		<a class="waves-effect" href="/admin"><i class="menu-icon ti-dashboard"></i><span>Homepage</span></a>
+	</li>
+	<li class="current">
+		<a class="waves-effect" href="/admin/about"><i class="menu-icon ti-calendar"></i><span>About</span></a>
+	</li>
+	<li>
+		<a class="waves-effect" href="/admin/alumni"><i class="menu-icon ti-user"></i><span>Alumni</span></a>
+	</li>
+</ul>
+@endsection
+
 @section('content')
 <div id="wrapper">
 	<div class="main-content">
@@ -32,8 +46,8 @@
 							<div class="row mt-3">
 								<div class="col-md-3"></div>
 								<div class="col-md-9">
-									<button type="submit" class="btn btn-primary waves-light waves-effect mr-2">Simpan</button>
 									<a href="{{route('admin_about')}}" class="btn btn-light waves-effect">Kembali</a>
+									<button type="submit" class="btn btn-primary waves-light waves-effect mr-2">Simpan</button>
 								</div>
 							</div>
 						</form>

@@ -91,21 +91,18 @@
                 </div>
               </div>
             </div>
-
             <div class="col-md-4">
               <div class="card">
                 <div class="card-body text-center">
                   <h5 class="card-title mt-4">PROGRAM SARJANA ILMU KOMPUTER DALAM ANGKA</h5>
                   <h6 class="card-subtitle mb-2 text-muted">(Tahun 2020)</h6>
                   <hr class="my-5" />
-                  <h1 class="card-text text-primary">75%</h1>
+                  <h1 class="card-text text-primary">{{ $grads->tepat_waktu}} %</h1>
                   <p class="card-text mb-4">Mahasiswa lulus tepat waktu (48 bulan)</p>
-
-                  <h1 class="card-text text-primary">88%</h1>
+                  <h1 class="card-text text-primary">{{ $grads->dapat_kerja}} %</h1>
                   <p class="card-text mb-4">Lulusan mendapatkan pekerjaan dalam waktu kurang dari tiga bulan</p>
-
-                  <h1 class="card-text text-primary">95%</h1>
-                  <p class="card-text mb-5">Mahasiswa lulus tepat waktu (72 bulan)</p>
+                  <h1 class="card-text text-primary">{{ $grads->kerja_sesuai}} %</h1>
+                  <p class="card-text mb-5">Mahasiswa mendapatkan pekerjaan sesuai bidang keahlian</p>
                   <!-- <a href="#" class="card-link">Card link</a>
                   <a href="#" class="card-link">Another link</a> -->
                 </div>

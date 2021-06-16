@@ -47,8 +47,8 @@
                 <div class="col-md-6">
                     <div class="card py-5 px-5">
                         <div class="card-body">
-                          <h1 class="card-title">About Us</h1>                      
-                          <h6 class="card-subtitle mb-2 text-muted">and Our Website</h6>
+                          <h1 class="card-title">{{ $abouts->title }}</h1>                      
+                          <h6 class="card-subtitle mb-2 text-muted">{{ $abouts->sub_title }}</h6>
                           <hr>
                           </hr>
                           <p class="card-text ms-1 my-4 me-5 text-start">
@@ -79,23 +79,22 @@
           <div class="col-md-3">
             <ul class="list-unstyled text-start">
               <li> <h4>Location</h4></li>
-              <li><i class=" "></i> IPB Darmaga Campus, Dramaga, Bogor</li>
-              <li><i class=" "></i> 16680, West Java, INDONESIA</li>
+              <li><i class=" "></i> {{ $contacts->location }}</li>
             </ul>
           </div>
 
           <div class="col-md-3 offset-2">
             <ul class="list-unstyled text-start">
               <li><h4>Contact Us</h4></li>
-              <li><i class=" "></i> Phone : xxxxxxxxxxx</li>
-              <li><i class=" "></i> Email   : xxxxxx@apps.ipb.ac.id</li>
+              <li><i class=" "></i> Phone : {{ $contacts->phone }}</li>
+              <li><i class=" "></i> Email   : {{ $contacts->email }}</li>
             </ul>
           </div>
 
           <div class="col-md-1 offset-3">
             <ul class="list-unstyled text-start">
               <li><h4>More at</h4></li>
-              <li><i class=" "></i> sc.ipb.ac.id</li>
+              <li><i class=" "></i> {{ $contacts->link_more }} </li>
             </ul>
           </div>
 

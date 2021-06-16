@@ -4,15 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Builder;
-use App\Models\Slider;
 use App\Models\Alumni;
 use App\Models\User;
-use App\Models\Grad;
 
-
-class HomeController extends Controller
+class AlumniController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -29,13 +24,11 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Grad $grad)
+    public function index()
     {
-        $sliders = Slider::orderBy('id', 'desc')->take(3)->get();
+        $alumnis = Alumni::orderBy('id', 'desc')->get();
         $users = User::all();
-        $alumnis = Alumni::all();
-        $grads = Grad::all();
-        return view('admin.slider.index', compact('sliders', 'alumnis', 'users', 'grads'));
+        return view('admin.alumni.alumni', compact('alumnis', 'users'));
     }
 
     /**
@@ -45,9 +38,8 @@ class HomeController extends Controller
      */
     public function create()
     {
-        $alumnis = Alumni::all();
         $users = User::all();
-        return view('admin.slider.create', compact('users', 'alumnis'));
+        return view('admin.alumni.create', compact('users'));
     }
 
     /**
@@ -59,14 +51,21 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'alumni_id' => 'required',
             'user_id' => 'required',
+            'angkatan' => 'required',
+            'spesialisasi' => 'required',
+            'jabatan' => 'required',
+            'perusahaan' => 'required',
+            'domisili_pekerjaan' => 'required',
+            'domisili_asal' => 'required',
+            'instagram' => 'required',
+            'linkedin' => 'required',
+            'github' => 'required',
         ]);
         
-        $slider = Slider::create($request->all());
+        $alumni = Alumni::create($request->all());
 
-        return redirect()->route('dashboard');
-        // dd ('success!');
+        return redirect()->route('admin_alumni');
     }
 
     /**
@@ -86,9 +85,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Grad $grad)
+    public function edit($id)
     {
-        return view('admin.editgrad', compact('grad'));
+        //
     }
 
     /**
@@ -98,21 +97,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Grad $grad) {
-        $request->validate([
-            'tepat_waktu' => 'required',
-            'dapat_kerja' => 'required',
-            'kerja_sesuai' => 'required',
-        ]);
-
-        $grad->update([
-            'tepat_waktu' => $request->tepat_waktu,
-            'dapat_kerja' => $request->dapat_kerja,
-            'kerja_sesuai' => $request->kerja_sesuai,
-        ]);
-
-        return redirect()->route('dashboard');
-        // dd('grad->id');
+    public function update(Request $request, $id)
+    {
+        //
     }
 
     /**
@@ -121,9 +108,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Slider $slider)
+    public function destroy(Alumni $alumni)
     {
-        Slider::destroy($slider->id);
-        return redirect('/admin/dashboard');
+        Alumni::destroy($alumni->id);
+        return redirect('/admin/alumni');
     }
 }

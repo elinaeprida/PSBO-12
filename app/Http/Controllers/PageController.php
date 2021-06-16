@@ -9,6 +9,8 @@ use App\Models\Slider;
 use App\Models\Alumni;
 use App\Models\User;
 use App\Models\About;
+use App\Models\Contact;
+use App\Models\Grad;
 
 class PageController extends Controller
 {
@@ -17,12 +19,14 @@ class PageController extends Controller
         $sliders = Slider::orderBy('id', 'desc')->take(3)->get();
         $users = User::all();
         $alumnis = Alumni::all();
-        return view('index', compact('sliders', 'alumnis', 'users'));
+        $grads = Grad::first();
+        return view('index', compact('sliders', 'alumnis', 'users', 'grads'));
     }
     
-    public function about()
+    public function about(About $about)
     {
-        $about = About::all();
-        return view('contact', compact('abouts'));
+        $contacts = Contact::first();
+        $abouts = About::first();
+        return view('contact', compact('abouts', 'contacts'));
     }
 }

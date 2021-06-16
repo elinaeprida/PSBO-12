@@ -51,26 +51,7 @@
                 </form>
               </div>
             </li>
-
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            -->
           </ul>
-
-          <!-- 
-
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          -->
         </div>
       </div>
     </nav>
@@ -84,7 +65,6 @@
             <h1>Pencarian Alumni</h1>
           </div>
         </div>
-
         <div class="container">
           <div class="row d-flex justify-content-center">
             <div class="col-2">
@@ -96,37 +76,20 @@
                 <a class="list-group-item list-group-item-action" href="#list-item-5">Cari Tempat Kerja</a>
               </div>
             </div>
-
-            
             <div class="col-6"> 
-
               <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0" >
-              <div class="card bg-white" style="height: 100px;">
+              <div class="card bg-white" style="height: 200px;">
                 <div class="card-body overflow-auto">
-                  <form class="card-body" action="{{ url()->current() }}" method="GET" role="search">
-                    @csrf
-                    <div class="input-group">
-                      <input class="typeahead form-control" type="text">
-                        <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="submit">Go!</button>
-                  </span>
-                    </div>
-                </form>
-
-                    {{-- <h4 id="list-item-1">Nama</h4>
+                    <h4 id="list-item-1">Nama</h4>
                       <div class="mb-3">
                        <!-- <label for="Perusahaan" class="form-label">nama lengkap</label> -->
                         <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="perusahaan">
                       </div>
-                    
-    
                     <h4 id="list-item-2">Angkatan</h4>
                     <div class="mb-3">
                      <!-- <label for="Perusahaan" class="form-label">angkatan</label> -->
                       <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="nama">
                     </div>
-                    
-    
                     <h4 id="list-item-3">Spesialisasi</h4>
                     <div class="mb-3">
                      <!-- <label class="form-label">spesialisasi</label> -->
@@ -137,33 +100,28 @@
                         <option value="3">SEIS</option>
                       </select>
                     </div>
-                    
-    
                     <h4 id="list-item-4">Pekerjaan</h4>
                       <div class="mb-3">
                        <!-- <label for="Perusahaan" class="form-label">pekerjaan</label> -->
                         <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="pekerjaan">
                       </div>
-                    
-                    
                     <h4 id="list-item-5">Tempat Kerja</h4>
                       <div class="mb-3">
                        <!-- <label for="Perusahaan" class="form-label">tempat kerja</label> -->
                         <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="kota tempat bekerja">
-                      </div> --}}
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-{{-- 
           <div class="row d-flex justify-content-center">
             <div class="col-md-6 offset-2">
               <div class="d-grid gap-2 my-4">
                 <button class="btn btn-outline-primary" type="button"><a href="/alumnipage" class="text-decoration-none"></a>Cari Alumni</button>
               </div>
             </div>
-          </div> --}}
+          </div>
 
           <!-- Hasil Pencarian -->
           <div class="col-6 offset-4"> 
@@ -180,7 +138,7 @@
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">
-                              <h5 class="card-title">{{ $alumni->user->name}}</h5>
+                              <h5 class="card-title"><a href="{{ url('alumni/'.$alumni->id) }}">{{ $alumni->user->name}}</a></h5>
                               <p class="card-text">
                                 {{ $alumni->jabatan}}
                               </p>
