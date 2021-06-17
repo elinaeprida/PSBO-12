@@ -51,16 +51,9 @@
                           <h6 class="card-subtitle mb-2 text-muted">{{ $abouts->sub_title }}</h6>
                           <hr>
                           </hr>
-                          <p class="card-text ms-1 my-4 me-5 text-start">
-                              KOM-Hub sebagai wadah untuk memudahkan <br>
-                              mahasiswa aktif Ilmu Komputer IPB untuk <br> 
-                              dapat terhubung dengan para alumni
-                            </p>
-                          <p class="card-text me-1 my-4 ms-5 text-end">
-                              Menyediakan database alumni yang dapat <br> 
-                              diakses untuk mendapatkan berbagai kontak <br>
-                              pribadi para alumni
-                            </p>
+                          <p class="card-text ms-1 my-4 me-1 text-middle">
+                            {{ $abouts->description }}
+                          </p>
                         </div>
                       </div>
                 </div>

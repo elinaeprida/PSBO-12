@@ -17,15 +17,15 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ["Task", "Hours per Day"],
-          ["< 50 jt/bln", 2],
-          ["< 30 jt/bln", 3],
-          ["< 20 jt/bln", 6],
-          ["< 10 jt/bln", 9],
-          ["< 5 jt/ bln", 11],
+          ["Software Engineer", 2],
+          ["Data Analyst", 3],
+          ["UI/UX Designer", 6],
+          ["Data Scientist", 9],
+          ["IoT Engineer", 11],
         ]);
 
         var options = {
-          title: "Revenue Percentage",
+          title: "Career Percentage",
           pieHole: 0.4,
         };
 
@@ -34,8 +34,8 @@
       }
     </script>
 
-    <title>Home</title>
-  </head>
+<title>Home</title>
+</head>
   <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
@@ -63,7 +63,7 @@
                   <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
                 @endif
                   <button type="button" class="btn btn-outline-secondary btn-sm">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                    <a href="{{ route('logout') }}" style="color:#000000; text-decoration:none" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                       Log Out
                     </a>
                   </button>
@@ -93,8 +93,8 @@
             <div class="col-md-4">
               <div class="card">
                 <div class="card-body text-center my-4">
-                  <h1 class="card-text">CONTENT</h1>
-                  <h6 class="card-text text-muted mb-5">TOP-5 FROM REVENUE</h6>
+                  <h1 class="card-text">Computer Science</h1>
+                  <h6 class="card-text text-muted mb-5">TOP-5 CAREER</h6>
                   <hr />
                 </div>
                 <div id="donutchart" style="width: 350px; height: 200px"></div>
@@ -147,11 +147,11 @@
                 </div>
                 <div class="carousel-inner">
                   @foreach ( $sliders as $index => $slider )
-                  <div class="carousel-item active">
+                  <div class="carousel-item {{$index == 0 ? 'active' : '' }}">
                     <img src="asset/profile1.jpg" class="d-block w-100" alt="..." />
                     <div class="carousel-caption d-none d-md-block">
-                      <h5>{{ $slider->user->name }}</h5>
-                        <p>{{ $slider->alumni->jabatan}} at {{ $slider->alumni->perusahaan }} | KOM {{ $slider->alumni->angkatan }}</p>
+                      <h5><a style="color:white; text-decoration:none" href="{{url('alumni/'.$slider->alumni->id) }}">{{ $slider->user->name }}</a></h5>
+                      <p>{{ $slider->alumni->jabatan}} at {{ $slider->alumni->perusahaan }} | KOM {{ $slider->alumni->angkatan }}</p>
                     </div>
                   </div>
                   @endforeach

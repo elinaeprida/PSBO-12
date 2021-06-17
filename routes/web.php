@@ -11,6 +11,7 @@ Auth::routes();
 // Page All Auth
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('checkRole:admin,mahasiswa,alumni');
 Route::get('/alumnipage', [App\Http\Controllers\HomeController::class, 'alumni'])->name('alumni')->middleware('checkRole:admin,mahasiswa,alumni');
+Route::get('/alumnipage', [App\Http\Controllers\HomeController::class, 'search'])->name('alumni_search')->middleware('checkRole:admin,mahasiswa,alumni');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about')->middleware('checkRole:admin,mahasiswa,alumni');
 Route::get('/alumni/{alumni}', [App\Http\Controllers\HomeController::class, 'show'])->name('show_alumni')->middleware('checkRole:admin,mahasiswa,alumni');
 

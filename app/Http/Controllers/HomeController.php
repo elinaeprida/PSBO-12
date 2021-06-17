@@ -47,21 +47,8 @@ class HomeController extends Controller
 
     public function alumni(Request $request, Alumni $alumni, User $user)
     {
-        // if($request->has('cari')){
-        //     $alumnis = Alumni::where('nama', 'LIKE', '%'.$request->cari.'%')->get();
-        // }else(
-        //     $alumnis = Alumni::all()
-        // );
-
-        // $users = User::orderBy('name', 'asc')->get()->all();
         $alumnis = Alumni::orderBy('angkatan', 'asc')->get()->all();;
         $users = User::all();
-        // $users = User::select("name")
-        //         ->where("name","LIKE","%{$request->name}%")
-        //         ->get();
-   
-        // return ;
-        // $sorted = $users->sortBy('name');
         
         return view('mahasiswa.alumniuser', compact('alumnis', 'users'));
     }
@@ -70,8 +57,16 @@ class HomeController extends Controller
         return view('alumni.show', compact('alumni'));
     }
 
-    // public function search(Request $request)
-    // {
+    public function search(Request $request)
+    {
+        $alumnis = Alumni::where([
+            ['user_id', '!=', null],
+            [function ($query) use ($request) {
+                if (($term =$request->term)) {
+                    $query->orWhere('user_id', 'LIKE', '%'.$term.'%')->get();
+                }
+            }]
+        ])
         //get the general information about the alumni
         // $alumni = Alumni::query()->firstOrFail();
 
@@ -95,6 +90,7 @@ class HomeController extends Controller
         //     ->take(5)
         //     ->get();
 
-        // return view('mahasiswa.alumniuser');
-    // }
+        return view('mahasiswa.alumniuser', compact('alumnis'))
+            ->with('i', (request()->input('page', 1) -1) *5 );
+    }
 }

@@ -29,7 +29,7 @@
               <a class="nav-link " aria-current="page" href="/home">Home</a>
             </li>
             <li class="nav-item mx-4">
-              <a class="nav-link " href="/alumni">Alumni</a>
+              <a class="nav-link " href="/alumnipage">Alumni</a>
             </li>
             <li class="nav-item mx-4">   
               <a class="nav-link" href="/about">About Us</a>
@@ -38,11 +38,11 @@
               <div class="container mt-1">
                 @if (Auth::user()->role === 'alumni')
                 <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
-              @else 
+                @else 
                 <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
-              @endif
+                @endif
                 <button type="button" class="btn btn-outline-secondary btn-sm">
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                  <a href="{{ route('logout') }}" style="color:#000000; text-decoration:none" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                     Log Out
                   </a>
                 </button>
@@ -51,26 +51,7 @@
                 </form>
               </div>
             </li>
-
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Dropdown </a>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            -->
           </ul>
-
-          <!-- 
-
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          -->
         </div>
       </div>
     </nav>
@@ -89,9 +70,6 @@
             </div>
 
             <!-- satu -->
-
-          
-
             <div class="row d-flex justify-content-center">
               <div class="col-md-5 mb-3">
                 <div class="card">
@@ -174,12 +152,10 @@
             </div>
 
             <!-- tiga -->
-
             <div class="row d-flex justify-content-center">
               <div class="col-md-5 mb-3">
                 <div class="card">
                   <div class="card-body">
-
                     <table style="width: 100%;">
                       <tr style="height: 2.5rem;">
                         <td>
@@ -206,7 +182,6 @@
                         </td>
                       </tr>
                     </table>
-
                   </div>
                 </div>
               </div>
@@ -229,8 +204,8 @@
                       </div>
                 </div>
             </div>
-</div>
-</div>
+        </div>
+      </div>
     </div>
     <!-- end profile -->
 
@@ -246,7 +221,6 @@
             </ul>
           </div>
         </div>
-
         <hr />
         <p class="text-center pt-3">Copyright Alumni Ilkom Hub. Computer Science. IPB University</p>
       </div>
@@ -255,10 +229,6 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="js/bootstrap.js"></script>
-
-    <!-- MDB 
-    <script type="text/javascript" src="js/js/mdb.min.js"></script>
-     MDB -->
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <script src="js/popper.min.js"></script>

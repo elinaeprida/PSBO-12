@@ -38,7 +38,7 @@
                 <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
               @endif
                 <button type="button" class="btn btn-outline-secondary btn-sm">
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                  <a href="{{ route('logout') }}" style="color:#000000; text-decoration:none" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                     Log Out
                   </a>
                 </button>
@@ -48,14 +48,6 @@
               </div>
             </li>
           </ul>
-
-          <!-- 
-
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          -->
         </div>
       </div>
     </nav>
@@ -180,6 +172,11 @@
                   <button class="btn btn-outline-success" type="submit">Simpan Perubahan</button>
                 </div>
               </div>
+              <div class="col-5">
+                <div class="d-grid gap-2 py-2 mb-4">
+                    <button class="btn btn-outline-danger" type="button"><a href="{{ url('alumni')}}" style="color:#000000; text-decoration:none" >Kembali</a></button>
+                </div>
+            </div>
             </div>
             </div>
           </form>

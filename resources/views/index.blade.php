@@ -25,7 +25,7 @@
         ]);
 
         var options = {
-          title: "Revenue Percentage",
+          title: "Career Percentage",
           pieHole: 0.4,
         };
 
@@ -79,8 +79,8 @@
             <div class="col-md-4">
               <div class="card">
                 <div class="card-body text-center my-4">
-                  <h1 class="card-text">CONTENT</h1>
-                  <h6 class="card-text text-muted mb-5">TOP-5 FROM REVENUE</h6>
+                  <h1 class="card-text">Computer Science</h1>
+                  <h6 class="card-text text-muted mb-5">TOP-5 CAREER</h6>
                   <hr />
                 </div>
                 <div id="donutchart" style="width: 350px; height: 200px"></div>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="carousel-inner">
                   @foreach ( $sliders as $index => $slider )
-                  <div class="carousel-item active">
+                  <div class="carousel-item {{$index == 0 ? 'active' : '' }}">
                     <img src="asset/profile1.jpg" class="d-block w-100" alt="..." />
                     <div class="carousel-caption d-none d-md-block">
                       <h5>{{ $slider->user->name }}</h5>
@@ -145,21 +145,6 @@
                     </div>
                   </div>
                   @endforeach
-                  </div>
-                  <div class="carousel-item">
-                    <img src="asset/profile2.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Imam Mulhaq Rosyadi</h5>
-                      <p>User Interface Designer at GoTo | KOM 55</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="asset/profile3.jpg" class="d-block w-100" alt="..." />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Dwi Nanda Tsania</h5>
-                      <p>Product Manager at Lazada | KOM 45</p>
-                    </div>
-                  </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

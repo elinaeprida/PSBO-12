@@ -56,7 +56,7 @@ class AlumniController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $alumni = new Alumni([
             'user_id' => 'required',
             'angkatan' => 'required',
             'spesialisasi' => 'required',
@@ -68,10 +68,10 @@ class AlumniController extends Controller
             'linkedin' => 'required',
             'github' => 'required',
         ]);
-        $alumni = Alumni::create($request->all());
-        $user = User::update([
-            'name' => $request->name,
-        ]);
+
+        $user = User::find('id');
+
+        $user->alumnis()->save($alumni);
 
         $alumni->update(['avatar' => $request->file('avatar')->store('alumni/avatar', 'public')]);
         return redirect()->route('profile');

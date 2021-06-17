@@ -38,7 +38,7 @@
                 <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
               @endif
                 <button type="button" class="btn btn-outline-secondary btn-sm">
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                  <a href="{{ route('logout') }}" style="color:#000000; text-decoration:none" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                     Log Out
                   </a>
                 </button>
@@ -48,19 +48,12 @@
               </div>
             </li>
           </ul>
-          <!-- 
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-          -->
         </div>
       </div>
     </nav>
     <!-- end navbar -->
     
     <!-- Contact -->
-    
     <div class="container-fluid bg-light" style="height: 800px;">
         <div class="container py-5" style="height: 800px; background-color: #fffafc;">
             <div class="row d-flex justify-content-center align-middle text-center" style="margin-top: 150px;">
@@ -72,16 +65,9 @@
                           <h6 class="card-subtitle mb-2 text-muted">{{ $about->sub_title }}</h6>
                           <hr>
                           </hr>
-                          <p class="card-text ms-1 my-4 me-5 text-start">
-                              KOM-Hub sebagai wadah untuk memudahkan <br>
-                              mahasiswa aktif Ilmu Komputer IPB untuk <br> 
-                              dapat terhubung dengan para alumni
-                            </p>
-                          <p class="card-text me-1 my-4 ms-5 text-end">
-                              Menyediakan database alumni yang dapat <br> 
-                              diakses untuk mendapatkan berbagai kontak <br>
-                              pribadi para alumni
-                            </p>
+                          <p class="card-text ms-1 my-4 me-1 text-middle">
+                            {{ $about->description }}
+                          </p>
                         </div>
                       @endforeach
                       </div>
@@ -89,7 +75,6 @@
             </div>
         </div>
     </div>
-
    <!-- end Contact -->
 
     <!-- Footer -->
