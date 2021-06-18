@@ -112,7 +112,7 @@ class HomeController extends Controller
         ]);
 
         return redirect()->route('dashboard');
-        // dd('grad->id');
+        // dd('$grad->id');
     }
 
     /**
@@ -123,6 +123,8 @@ class HomeController extends Controller
      */
     public function destroy(Slider $slider)
     {
+        $slider->alumni()->touch();
+        $slider->user()->touch();
         Slider::destroy($slider->id);
         return redirect('/admin/dashboard');
     }

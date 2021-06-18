@@ -26,18 +26,18 @@
                             @csrf
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label class="col-form-label" name="alumni[]">Alumni</label>
-                                    <select class="form-control">
+                                    <label class="col-form-label">Alumni</label>
+                                    <select class="form-control" name="alumni_id">
                                         @foreach ($alumnis as $alumni)
-                                            <option value="{{ $alumni->id }}">{{ $alumni->user->name }}</option>
+                                            <option value="{{ $alumni->id }}" @if($alumni->id == old('alumni_id')) selected @endif>{{ $alumni->user->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">User</label>
-                                    <select class="form-control" name="user[]">
+                                    <select class="form-control" name="user_id">
                                         @foreach ($users as $user)
-                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            <option value="{{ $user->id }}" @if($user->id == old('user_id')) selected @endif>{{ $user->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

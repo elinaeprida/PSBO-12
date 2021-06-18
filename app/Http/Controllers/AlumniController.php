@@ -57,7 +57,6 @@ class AlumniController extends Controller
     public function store(Request $request)
     {
         $alumni = new Alumni([
-            'user_id' => 'required',
             'angkatan' => 'required',
             'spesialisasi' => 'required',
             'jabatan' => 'required',
@@ -71,9 +70,9 @@ class AlumniController extends Controller
 
         $user = User::find('id');
 
-        $user->alumnis()->save($alumni);
+        $alumni = Alumni::create($request->all());
 
-        $alumni->update(['avatar' => $request->file('avatar')->store('alumni/avatar', 'public')]);
+        $alumni->update(['avatar' => $request->file('avatar')->store('avatar', 'public')]);
         return redirect()->route('profile');
     }
 
@@ -129,6 +128,24 @@ class AlumniController extends Controller
         //     ];
         // }
 
+        // $Alumni = Alumni::with('User')->find('id');
+        // $Alumni->angkatan = $request->input('angkatan');
+        // $Alumni->spesialisasi = $request->input('spesialisasi');
+        // $Alumni->jabatan = $request->input('jabatan');
+        // $Alumni->perusahaan = $request->input('perusahaan');
+        // $Alumni->domisili_pekerjaan = $request->input('domisili_pekerjaan');
+        // $Alumni->domisili_asal = $request->input('domisili_asal');
+        // $Alumni->instagram = $request->input('instagram');
+        // $Alumni->linkedin = $request->input('linkedin');
+        // $Alumni->github = $request->input('github');
+
+        // // Save The Term first
+        // $Alumni->save();
+
+        // // Now update the relation
+        // $Alumni->User->update([
+        //     'name' => $data['User']['name']
+
         $request->validate([
             'angkatan' => 'required',
             'spesialisasi' => 'required',
@@ -154,24 +171,58 @@ class AlumniController extends Controller
         ]);
         
         
-        if($request->has('Auth::user()')) {
-            $alumni->Auth::user()->detach();
-            foreach($request->user as $key => $value) {
-                $alumni->Auth::user()->attach($value);
-            }
-        }
+    //     if($request->has('Auth::user()')) {
+    //         $alumni->Auth::user()->detach();
+    //         foreach($request->user as $key => $value) {
+    //             $alumni->Auth::user()->attach($value);
+    //         }
+    //     }
 
-       if($request->hasFile('avatar')) {
-            $storedImg = $alumni->avatar;
-            $alumni->update(['article_img' => $request->file('avatar')->store('alumni/avatar', 'public')]);
-            if(Storage::exists('public/' . $alumni->avatar)) {
-                Storage::delete('public/' . $storedImg);
-            }
-        }
+    //    if($request->hasFile('avatar')) {
+    //         $storedImg = $alumni->avatar;
+    //         $alumni->update(['article_img' => $request->file('avatar')->store('alumni/avatar', 'public')]);
+    //         if(Storage::exists('public/' . $alumni->avatar)) {
+    //             Storage::delete('public/' . $storedImg);
+    //         }
+    //     }
 
         // return redirect()->route('alumniedit');
 
-            return $alumni;
+    //     return $alumni;
+    // $request->validate([
+    //         'user_id' => 'required',
+    //         'angkatan' => 'required',
+    //         'spesialisasi' => 'required',
+    //         'jabatan' => 'required',
+    //         'perusahaan' => 'required',
+    //         'domisili_pekerjaan' => 'required',
+    //         'domisili_asal' => 'required',
+    //         'instagram' => 'required',
+    //         'linkedin' => 'required',
+    //         'github' => 'required',
+    // ]);
+
+    // $alumni->update([
+    //     'user_id' => $request->user->name,
+    //     'angkatan' => $request->angkatan,
+    //         'spesialisasi' => $request->spesialisasi,
+    //         'jabatan' => $request->jabatan,
+    //         'perusahaan' => $request->perusahaan,
+    //         'domisili_pekerjaan' => $request->domisili_pekerjaan,
+    //         'domisili_asal' => $request->domisili_asal,
+    //         'instagram' => $request->instagram,
+    //         'linkedin' => $request->linkedin,
+    //         'github' => $request->github,
+    // ]);
+
+    if($request->has('avatar')) {
+        $storedImg = $alumni->avatar;
+        $alumni->update(['avatar ' => $request->file('avatar')->store('avatar', 'public')]);
+        if(Storage::exists('public/' . $alumni->avatar)) {
+            Storage::delete('public/' . $storedImg);
+        }
+    }
+    return redirect()->route('profile');
 
     }
 

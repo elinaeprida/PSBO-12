@@ -19,6 +19,7 @@ class Alumni extends Model
         'instagram',
         'linkedin',
         'github',
+        'avatar',
     ];
 
     public function user()

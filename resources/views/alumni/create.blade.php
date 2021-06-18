@@ -76,10 +76,8 @@
               <div class="container">
                 <div class="row justify-content-center mb-3">
                   <div class="col-md-5">
-                    <div class="input-group">
-                      <span class="input-group-text">Nama Lengkap</span>
-                      <input type="text" name="name" class="form-control" value="{{ old('name',Auth::user()->name) }}">
-                    </div>
+                      <label for="Angkatan" class="form-label">Nama Lengkap</label>
+                      <span class="input-group-text">{{ Auth::user()->name }}</span>
                   </div>
                 </div>
               </div>
@@ -95,7 +93,6 @@
             <div class="row justify-content-center mb-3">
               <div class="col-md-5">
                 <div class="mb-3">
-
                   <label class="form-label">Spesialisasi</label>
                   <select class="form-select" name="spesialisasi">
                     <option selected disabled>CSN / CIO / SEIS</option>
@@ -170,7 +167,7 @@
               <div class="col-5">
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Upload Photo Profile</label>
-                  <input class="form-control" type="file" name="avatar" id="formFile">
+                  <input class="form-control" type="file" name="avatar">
                 </div>
               </div>
             </div>
