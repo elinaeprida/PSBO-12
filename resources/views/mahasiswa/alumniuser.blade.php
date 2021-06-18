@@ -36,10 +36,12 @@
             </li>
             <li>
                 <div class="container mt-1">
-                @if (Auth::user()->role === 'alumni')
-                  <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                @if (Auth::user()->role === 'alumni' && Auth::user()->alumni === null)
+                  <a class="navbar-brand" href="/alumni"> <img src="asset/user.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                @elseif (Auth::user()->role === 'alumni')
+                  <a class="navbar-brand" href="/alumni"> <img src="{{ asset('storage/'.Auth::user()->alumni->avatar) }}" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
                 @else 
-                  <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+                  <img src="asset/user.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
                 @endif
                 <button type="button" class="btn btn-outline-secondary btn-sm">
                   <a href="{{ route('logout') }}" style="color:#000000; text-decoration:none" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
@@ -80,22 +82,7 @@
               <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0" >
               <div class="card bg-white" style="height: 200px;">
                 <div class="card-body overflow-auto">
-                  <div class="input-group">
-                    <span class="input-group-btn mr-5 mt-1">
-                        <button class="btn btn-info" type="submit" title="Search projects">
-                            <span class="fas fa-search"></span>
-                        </button>
-                    </span>
-                    <input type="text" class="form-control mr-2" name="term" placeholder="Search projects" id="term">
-                    <a href="{{ route('alumni_search') }}" class=" mt-1">
-                        <span class="input-group-btn">
-                            <button class="btn btn-danger" type="button" title="Refresh page">
-                                <span class="fas fa-sync-alt"></span>
-                            </button>
-                        </span>
-                    </a>
-                </div>
-                    {{-- <h4 id="list-item-1">Nama</h4>
+                    <h4 id="list-item-1">Nama</h4>
                       <div class="mb-3">
                         <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="perusahaan">
                       </div>
@@ -119,7 +106,7 @@
                     <h4 id="list-item-5">Tempat Kerja</h4>
                       <div class="mb-3">
                         <input type="text" class="form-control bg-light" id="Perusahaan" placeholder="kota tempat bekerja">
-                      </div> --}}
+                      </div>
                   </div>
                 </div>
               </div>
@@ -143,7 +130,7 @@
                       <div class="card mb-3">
                         <div class="row g-0">
                           <div class="col-md-4">
-                            <img src="asset/4.jpg" alt="..." class="img-fluid">
+                            <img src="{{ asset('storage/'.$alumni->avatar) }}" alt="..." class="img-fluid">
                           </div>
                           <div class="col-md-8">
                             <div class="card-body">

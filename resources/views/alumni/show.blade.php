@@ -36,10 +36,10 @@
             </li>
             <li>
               <div class="container mt-1">
-                @if (Auth::user()->role === 'alumni')
-                <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+              @if (Auth::user()->role === 'alumni')
+                <a class="navbar-brand" href="/alumni"> <img src="asset/user.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
               @else 
-                <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+                <img src="asset/user.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
               @endif
                 <button type="button" class="btn btn-outline-secondary btn-sm">
                   <a href="{{ route('logout') }}" style="color:#000000; text-decoration:none" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
@@ -65,7 +65,7 @@
                     <h1>Profile</h1>
                 </div>
                 <div class="col mt-4 mb-5">
-                    <img src="asset/22.jpg" alt="" class="rounded-circle img-thumbnail" style="width: 200px;">
+                    <img src="{{ asset('storage/'.$alumni->avatar) }}" alt="" class="rounded-circle img-thumbnail" style="width: 200px;">
                 </div>
             </div>
             <div class="row d-flex justify-content-center">

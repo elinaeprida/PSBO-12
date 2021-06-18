@@ -57,10 +57,12 @@
               </li>
               <li>
                 <div class="container mt-1">
-                  @if (Auth::user()->role === 'alumni')
-                  <a class="navbar-brand" href="/alumni"> <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                  @if (Auth::user()->role === 'alumni' && Auth::user()->alumni === null)
+                  <a class="navbar-brand" href="/alumni"> <img src="asset/user.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
+                @elseif (Auth::user()->role === 'alumni')
+                  <a class="navbar-brand" href="/alumni"> <img src="{{ asset('storage/'.Auth::user()->alumni->avatar) }}" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}</a>
                 @else 
-                  <img src="asset/22.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
+                  <img src="asset/user.jpg" alt="" width="25" class="rounded-circle mx-2" />{{ Auth::user()->name }}
                 @endif
                   <button type="button" class="btn btn-outline-secondary btn-sm">
                     <a href="{{ route('logout') }}" style="color:#000000; text-decoration:none" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">

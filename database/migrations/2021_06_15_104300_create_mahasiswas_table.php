@@ -15,8 +15,8 @@ class CreateMahasiswasTable extends Migration
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('NIM');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('NIM')->unique();
             $table->timestamps();
         });
     }

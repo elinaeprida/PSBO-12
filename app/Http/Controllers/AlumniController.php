@@ -34,8 +34,6 @@ class AlumniController extends Controller
         } else {
             return view('alumni.alumniprofile', compact('alumni'));
         }
-        // dd($alumnis=Alumni::all());
-
     }
 
     /**
@@ -68,8 +66,6 @@ class AlumniController extends Controller
             'github' => 'required',
         ]);
 
-        $user = User::find('id');
-
         $alumni = Alumni::create($request->all());
 
         $alumni->update(['avatar' => $request->file('avatar')->store('avatar', 'public')]);
@@ -96,8 +92,6 @@ class AlumniController extends Controller
     public function edit(Alumni $alumni)
     {
         return view('alumni.alumniedit', compact('alumni'));
-        // return redirect()->route('alumniedit', ['id' => $id]);
-        // dd($alumni->id);
     }
 
     /**
@@ -109,43 +103,6 @@ class AlumniController extends Controller
      */
     public function update(Request $request, Alumni $alumni)
     {
-        // $user = User::find('id');
-
-        // $alumnis = $user->alumnis()->get();
-
-        // foreach ($alumnis as $alumni) {
-        //     $data[] = [
-        //         'name' => $alumni->user->name,
-        //         'angkatan' => $alumni->angkatan,
-        //         'spesialisasi' => $alumni->spesialisasi,
-        //         'jabatan' => $alumni->jabatan,
-        //         'perusahaan' => $alumni->perusahaan,
-        //         'domisili_pekerjaan' => $alumni->domisili_pekerjaan,
-        //         'domisili_asal' => $alumni->domisili_asal,
-        //         'instagram' => $alumni->instagram,
-        //         'linkedin' => $alumni->linkedin,
-        //         'github' => $alumni->github,
-        //     ];
-        // }
-
-        // $Alumni = Alumni::with('User')->find('id');
-        // $Alumni->angkatan = $request->input('angkatan');
-        // $Alumni->spesialisasi = $request->input('spesialisasi');
-        // $Alumni->jabatan = $request->input('jabatan');
-        // $Alumni->perusahaan = $request->input('perusahaan');
-        // $Alumni->domisili_pekerjaan = $request->input('domisili_pekerjaan');
-        // $Alumni->domisili_asal = $request->input('domisili_asal');
-        // $Alumni->instagram = $request->input('instagram');
-        // $Alumni->linkedin = $request->input('linkedin');
-        // $Alumni->github = $request->input('github');
-
-        // // Save The Term first
-        // $Alumni->save();
-
-        // // Now update the relation
-        // $Alumni->User->update([
-        //     'name' => $data['User']['name']
-
         $request->validate([
             'angkatan' => 'required',
             'spesialisasi' => 'required',
@@ -170,60 +127,14 @@ class AlumniController extends Controller
             'github' => $request->github,
         ]);
         
-        
-    //     if($request->has('Auth::user()')) {
-    //         $alumni->Auth::user()->detach();
-    //         foreach($request->user as $key => $value) {
-    //             $alumni->Auth::user()->attach($value);
-    //         }
-    //     }
-
-    //    if($request->hasFile('avatar')) {
-    //         $storedImg = $alumni->avatar;
-    //         $alumni->update(['article_img' => $request->file('avatar')->store('alumni/avatar', 'public')]);
-    //         if(Storage::exists('public/' . $alumni->avatar)) {
-    //             Storage::delete('public/' . $storedImg);
-    //         }
-    //     }
-
-        // return redirect()->route('alumniedit');
-
-    //     return $alumni;
-    // $request->validate([
-    //         'user_id' => 'required',
-    //         'angkatan' => 'required',
-    //         'spesialisasi' => 'required',
-    //         'jabatan' => 'required',
-    //         'perusahaan' => 'required',
-    //         'domisili_pekerjaan' => 'required',
-    //         'domisili_asal' => 'required',
-    //         'instagram' => 'required',
-    //         'linkedin' => 'required',
-    //         'github' => 'required',
-    // ]);
-
-    // $alumni->update([
-    //     'user_id' => $request->user->name,
-    //     'angkatan' => $request->angkatan,
-    //         'spesialisasi' => $request->spesialisasi,
-    //         'jabatan' => $request->jabatan,
-    //         'perusahaan' => $request->perusahaan,
-    //         'domisili_pekerjaan' => $request->domisili_pekerjaan,
-    //         'domisili_asal' => $request->domisili_asal,
-    //         'instagram' => $request->instagram,
-    //         'linkedin' => $request->linkedin,
-    //         'github' => $request->github,
-    // ]);
-
-    if($request->has('avatar')) {
-        $storedImg = $alumni->avatar;
-        $alumni->update(['avatar ' => $request->file('avatar')->store('avatar', 'public')]);
-        if(Storage::exists('public/' . $alumni->avatar)) {
-            Storage::delete('public/' . $storedImg);
+        if($request->has('avatar')) {
+            $storedImg = $alumni->avatar;
+            $alumni->update(['avatar ' => $request->file('avatar')->store('avatar', 'public')]);
+            if(Storage::exists('storage/' . $alumni->avatar)) {
+                Storage::delete('storage/' . $storedImg);
+            }
         }
-    }
-    return redirect()->route('profile');
-
+        return redirect()->route('profile');
     }
 
     /**
