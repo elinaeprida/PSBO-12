@@ -135,7 +135,7 @@
                 <div class="carousel-inner">
                   @foreach ( $sliders as $index => $slider )
                   <div class="carousel-item {{$index == 0 ? 'active' : '' }}">
-                    <img src="asset/profile1.jpg" class="d-block w-100" alt="..." />
+                    <img src="{{ asset('storage/'.$slider->alumni->avatar) }}" class="d-block w-100" alt="..." style="width:400px; height:400px;"/>
                     <div class="carousel-caption d-none d-md-block">
                       <h5>{{ $slider->user->name }}</h5>
                         <p>{{ $slider->alumni->jabatan}} at {{ $slider->alumni->perusahaan }} | KOM {{ $slider->alumni->angkatan }}</p>
