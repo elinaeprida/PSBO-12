@@ -1,5 +1,5 @@
 <p align="center"><b> Kom-Hub by Kelompok 12 P1 </b></p>
-<p align="center"><a href="" target="_blank"><img src="https://i.ibb.co/1T4xSGp/icon-komhub.png" alt="icon-komhub" border="0" width="150"></a></p>
+<p align="center"><a href="https://alumni-ilkom-hub.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/1T4xSGp/icon-komhub.png" alt="icon-komhub" border="0" width="150"></a></p>
 
 # KOM-HUB
 KOM - Hub hadir sebagai sumber informasi tentang data-data alumni yang berisikan informasi karir, kontak yang bisa dihubungi, dan link GitHub yang bisa diakses. Dengan KOM-HUB diharapkan mahasiswa dapat terhubung dengan alumni dan mempermudah akses data alumni sesuai dengan kebutuhan.
@@ -251,6 +251,7 @@ Eloquent relationship pada class user dengan alumni, user dengan mahasiswa, sert
     - page edit password : update
 
 # Hasil implementasi
+### Link Website: <p align="left"><a href="https://alumni-ilkom-hub.herokuapp.com/" target="_blank"></a>Kom-Hub</p>
 ### Screenshot sistem
 ![Image of login](https://i.ibb.co/HCVngmc/login.jpg)
 ![Image of about us](https://i.ibb.co/9cpYWJk/aboutus1.jpg)
