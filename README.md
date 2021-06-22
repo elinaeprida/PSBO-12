@@ -251,7 +251,7 @@ Eloquent relationship pada class user dengan alumni, user dengan mahasiswa, sert
     - page edit password : update
 
 # Hasil implementasi
-### Link Website: <p align="left"><a href="https://alumni-ilkom-hub.herokuapp.com/" target="_blank"></a>Kom-Hub</p>
+### Link Website: <p align="left"><a href="https://alumni-ilkom-hub.herokuapp.com/" target="_blank">Kom-Hub</a></p>
 ### Screenshot sistem
 ![Image of login](https://i.ibb.co/HCVngmc/login.jpg)
 ![Image of about us](https://i.ibb.co/9cpYWJk/aboutus1.jpg)
