@@ -180,9 +180,9 @@
         <div class="row">
           <div class="col-md-4 offset-5">
             <ul class="list-unstyled text-start">
-              <li href="http://haipb.ipb.ac.id/"><i class="bi bi-arrow-right-circle"></i> Himpunan Alumni IPB</li>
-              <li href="https://www.facebook.com/groups/haipb2013/"><i class="bi bi-arrow-right-circle"></i> Grup Himpunan Alumni IPB</li>
-              <li href="https://www.linkedin.com/company/ilmukomputeripb/"><i class="bi bi-arrow-right-circle"></i> Linkedin Alumni Ilkom IPB</li>
+              <li><i class="bi bi-arrow-right-circle"></i><a href="http://haipb.ipb.ac.id/" style="color:#ffffff;  text-decoration:none;">Himpunan Alumni IPB</a></li>
+              <li><i class="bi bi-arrow-right-circle"></i><a href="https://www.facebook.com/groups/haipb2013/" style="color:#ffffff; text-decoration:none">Grup Himpunan Alumni IPB</a></li>
+              <li><i class="bi bi-arrow-right-circle"></i><a href="https://www.linkedin.com/company/ilmukomputeripb/" style="color:#ffffff; text-decoration:none"> Linkedin Alumni Ilkom IPB </a></li>
             </ul>
           </div>
         </div>
