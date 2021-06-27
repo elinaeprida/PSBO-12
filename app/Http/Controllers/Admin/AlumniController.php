@@ -85,11 +85,11 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit_role(User $user)
     {
-        //
+        return view('admin.alumni.editrole', compact('user'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -97,9 +97,17 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update_role(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'role' => 'required',
+        ]);
+
+        $user->update([
+            'role' => $request->role,
+        ]);
+        
+        return redirect()->route('admin_alumni');
     }
 
     /**

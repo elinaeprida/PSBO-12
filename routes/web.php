@@ -43,3 +43,6 @@ Route::get('/admin/alumni', [App\Http\Controllers\Admin\AlumniController::class,
 Route::get('/admin/alumni/create', [App\Http\Controllers\Admin\AlumniController::class, 'create']);
 Route::patch('/admin/alumni', [App\Http\Controllers\Admin\AlumniController::class, 'store']);
 Route::delete('/admin/alumni/{alumni}', [App\Http\Controllers\Admin\AlumniController::class, 'destroy']);
+
+Route::get('/admin/user/{user}/edit', [App\Http\Controllers\Admin\AlumniController::class, 'edit_role']);
+Route::patch('/admin/user/{user}', [App\Http\Controllers\Admin\AlumniController::class, 'update_role']);

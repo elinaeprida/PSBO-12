@@ -102,7 +102,7 @@
                 <div id="donutchart" style="width: 350px; height: 200px"></div>
                 <div class="card-body">
                   <p class="card-text text-center mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quia quis odio. Tenetur cumque unde ad, soluta rerum, atque nesciunt ab sapiente velit sunt enim, autem magnam minus facilis perferendis eum maiores facere.
+                    Sebaran pekerjaan alumni ilkom berdasarkan data dari angkatan 48-53 yaitu Software Engineer 28.4%, Data Scientist 15.7%, UI/UX Designer 12.3%, QA Analyst 7.2%, dan pekerjaan pada bidang lainnya sebesar 36.4%.
                   </p>
                 </div>
               </div>

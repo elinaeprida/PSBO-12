@@ -112,7 +112,6 @@ class HomeController extends Controller
         ]);
 
         return redirect()->route('dashboard');
-        // dd('$grad->id');
     }
 
     /**

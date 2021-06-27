@@ -46,7 +46,11 @@
 								@foreach ( $alumnis as $index => $alumni )
 								<tr>
 									<th scope="row">{{ $loop->iteration }}</th>
-									<td>{{ $alumni->user->name }}</td>
+									@if ($alumni->user_id !== NULL)
+										<td>{{ $alumni->user->name }}</td>
+									@else
+										<td> - </td>
+									@endif
 									<td>{{ $alumni->angkatan }}</td>
 									<td>{{ $alumni->spesialisasi }}</td>
 									<td>{{ $alumni->jabatan }}</td>
@@ -55,6 +59,47 @@
 									<td>{{ $alumni->domisili_asal }}</td>
 									<td>
 										<form action="{{ url('/admin/alumni/'.$alumni->id) }}" method="post">
+											@method('delete')
+											@csrf
+											<button type="submit" class="btn btn-sm btn-danger delete-btn">Hapus</button>
+										</form>
+									</td>
+								</tr>
+								@endforeach
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-lgl-8 col-xs-12 content-align-center">
+				<div class="box-content card white">
+					<h4 class="box-title">Daftar Pengguna</h4>
+					<!-- /.box-title -->
+					<div class="card-content">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nama</th>
+									<th>Email</th>
+									<th>Role</th>
+									<th>Aksi</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach ( $users as $index => $user )
+								<tr>
+									<th scope="row">{{ $loop->iteration }}</th>
+									<td>{{ $user->name }}</td>
+									<td>{{ $user->email}}</td>
+									<td>{{ $user->role }}</td>
+									<td>
+										<div class="d-flex justify-content-between align-items-center mb-2">
+											<a class="btn btn-primary waves-light waves-effect px-4" href="{{url('/admin/user/'.$user->id)}}/edit">
+												Edit
+											</a>
+										</div>
+										<form action="{{ url('/admin/user/'.$user->id) }}" method="post">
 											@method('delete')
 											@csrf
 											<button type="submit" class="btn btn-sm btn-danger delete-btn">Hapus</button>
