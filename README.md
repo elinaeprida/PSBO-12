@@ -220,15 +220,17 @@ Eloquent relationship pada class user dengan alumni, user dengan mahasiswa, sert
 
 # Hasil dan pembahasan
 ### Use case diagram
-![Image of usecase diagram]()
+![Image of usecase diagram](https://i.ibb.co/znvD7Qq/usecase.jpg)
 ### Activity diagram
-![Image of activity diagram]()
+![Image of activity diagram](https://i.ibb.co/mN4CMjJ/act-search.jpg)
+![Image of activity diagram](https://i.ibb.co/DYWmPGT/act-edit-profile.jpg)
+![Image of activity diagram](https://i.ibb.co/zJrvtPm/act-regis.jpg)
 ### Class diagram
-![Image of class diagram]()
+![Image of class diagram](https://i.ibb.co/gR32Xfp/classdiagram.jpg)
 ### Entity Relationship Diagram
-![Image of erd diagram]()
+![Image of erd diagram](https://i.ibb.co/NTmCHVt/erddiagram.jpg)
 ### Arsitektur sistem
-![Image of system architecture](https://i.ibb.co/3FxRpjd/arsitektur.jpg)
+![Image of system architecture](https://i.ibb.co/8Yx3bYc/arsitektur.jpg)
 ### Fungsi utama yang dikembangkan
 - Cari Alumni
     - Mahasiswa yang sudah login dapat mencari alumni ilmu komputer berdasarkan nama, angkatan, spesialisasi, atau pekerjaan.
